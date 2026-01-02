@@ -1,0 +1,11 @@
+# Skills Download Directory
+
+This directory contains downloaded LLM skills from GitHub. Each skill is stored in its own subdirectory.
+
+To download skills, run:
+```bash
+npm run download-skills
+```
+
+This will fetch all skills from the GitHub repository and store them locally.
+

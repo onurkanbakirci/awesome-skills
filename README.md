@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LLM Skills Project
+
+A Next.js application for browsing and downloading LLM skills with a clean, Vercel-inspired design.
+
+## Features
+
+- 🔍 **Search**: Real-time search across skills with keyword highlighting
+- 📦 **Download**: Download skills as ZIP files directly from the app
+- 🎨 **Modern UI**: Clean, minimal design inspired by Vercel
+- ⚡ **Fast**: File-based search with no external dependencies
+- 🎯 **TypeScript**: Fully typed for better developer experience
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Download Skills
+
+Download all skills from the GitHub repository:
+
+```bash
+npm run download-skills
+```
+
+This will fetch all skills and store them in `public/skills/` directory with UUID-based folder names.
+
+### Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+├── app/
+│   ├── api/
+│   │   ├── download/[id]/   # Download skill as ZIP
+│   │   └── skills/           # List and search skills
+│   ├── skills/[id]/          # Skill detail pages
+│   └── page.tsx              # Main page with search
+├── data/
+│   └── skills.json           # Skills metadata with UUIDs
+├── public/
+│   └── skills/               # Downloaded skill files (UUID folders)
+├── scripts/
+│   └── download-skills.ts    # Script to download skills from GitHub
+└── components/
+    └── ui/                   # shadcn/ui components
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Skills Data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Each skill has:
+- **UUID**: Unique identifier (v4)
+- **Name**: Skill name (e.g., "algorithmic-art")
+- **Description**: What the skill does
+- **Category**: Design, Development, Productivity, etc.
+- **Tags**: Searchable tags
+- **Installation**: NPM command to install
+- **Source URL**: GitHub repository link
 
-## Deploy on Vercel
+## Technologies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **shadcn/ui** - UI components
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
+- **Archiver** - ZIP file creation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT

@@ -1,0 +1,146 @@
+[
+  {
+    "id": "40052610-0196-41b5-9fb1-e88a3b283af9",
+    "name": "algorithmic-art",
+    "description": "Generate artistic patterns and designs using algorithmic approaches and creative coding techniques",
+    "category": "Creative",
+    "tags": ["art", "generative", "design"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+    "owner": "anthropic"
+  },
+  {
+    "id": "79558c41-dc05-4b65-9154-25c89ba6e28f",
+    "name": "brand-guidelines",
+    "description": "Generate comprehensive brand identity guidelines including colors, typography, and voice",
+    "category": "Design",
+    "tags": ["branding", "identity", "guidelines"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+    "owner": "anthropic"
+  },
+  {
+    "id": "5164e31c-9aa8-4cdb-a065-82e7bcce85d4",
+    "name": "canvas-design",
+    "description": "Create visual designs and layouts for web and mobile applications",
+    "category": "Design",
+    "tags": ["ui", "visual-design", "canvas"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+    "owner": "anthropic"
+  },
+  {
+    "id": "9077d57e-536f-4d50-a087-03dbf08852af",
+    "name": "doc-coauthoring",
+    "description": "Collaborate on document creation with AI-assisted writing and editing",
+    "category": "Productivity",
+    "tags": ["documents", "collaboration", "writing"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+    "owner": "anthropic"
+  },
+  {
+    "id": "c74c72bb-3900-4a81-8d6e-02ce2f40333e",
+    "name": "docx",
+    "description": "Process and manipulate Microsoft Word documents with advanced formatting",
+    "category": "Productivity",
+    "tags": ["documents", "word", "docx"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/docx",
+    "owner": "anthropic"
+  },
+  {
+    "id": "83e7299d-1e46-490a-94a1-4b28ce36475a",
+    "name": "frontend-design",
+    "description": "Design and build modern frontend interfaces with best practices",
+    "category": "Development",
+    "tags": ["frontend", "ui", "web-development"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+    "owner": "anthropic"
+  },
+  {
+    "id": "8172b0ff-0832-4fe5-9d5b-5541a9d54a0e",
+    "name": "internal-comms",
+    "description": "Draft and manage internal communications and company announcements",
+    "category": "Communication",
+    "tags": ["internal", "communications", "company"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+    "owner": "anthropic"
+  },
+  {
+    "id": "49c975dc-b8af-4332-903f-f72d064ee861",
+    "name": "mcp-builder",
+    "description": "Build Model Context Protocol integrations and custom AI tool connections",
+    "category": "Development",
+    "tags": ["mcp", "integrations", "ai-tools"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+    "owner": "anthropic"
+  },
+  {
+    "id": "d54585ee-5994-456e-bdf3-d37117eeaa1d",
+    "name": "pdf",
+    "description": "Generate, process, and manipulate PDF documents with advanced features",
+    "category": "Productivity",
+    "tags": ["pdf", "documents", "processing"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+    "owner": "anthropic"
+  },
+  {
+    "id": "abc2a188-b028-4b7c-8c59-2d4f7548aad9",
+    "name": "pptx",
+    "description": "Create and edit PowerPoint presentations with professional layouts",
+    "category": "Productivity",
+    "tags": ["powerpoint", "presentations", "slides"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+    "owner": "anthropic"
+  },
+  {
+    "id": "68507ece-1eec-4a30-8cc0-ad60d1881390",
+    "name": "skill-creator",
+    "description": "Create new LLM skills and agent capabilities with proper templates and structure",
+    "category": "Development",
+    "tags": ["skills", "creation", "meta"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+    "owner": "anthropic"
+  },
+  {
+    "id": "b34fc506-ab64-4589-9ab9-610a0c346369",
+    "name": "slack-gif-creator",
+    "description": "Generate and find relevant GIFs for Slack conversations and communications",
+    "category": "Communication",
+    "tags": ["slack", "gif", "social"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+    "owner": "anthropic"
+  },
+  {
+    "id": "805bfa87-7c72-4dff-a193-2057070834d4",
+    "name": "theme-factory",
+    "description": "Generate complete design themes including colors, typography, and components",
+    "category": "Design",
+    "tags": ["themes", "design-system", "styling"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+    "owner": "anthropic"
+  },
+  {
+    "id": "a983da78-c443-4a6b-94b6-1bc5b72dd2f7",
+    "name": "web-artifacts-builder",
+    "description": "Build interactive web artifacts and components for modern applications",
+    "category": "Development",
+    "tags": ["web", "artifacts", "components"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+    "owner": "anthropic"
+  },
+  {
+    "id": "34aa13a3-5268-4a05-ab39-73330438fc37",
+    "name": "webapp-testing",
+    "description": "Automated testing and quality assurance for web applications",
+    "category": "Development",
+    "tags": ["testing", "qa", "automation"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+    "owner": "anthropic"
+  },
+  {
+    "id": "0b8b1962-b81e-41a0-968c-1e79aefb0cec",
+    "name": "xlsx",
+    "description": "Process and manipulate Excel spreadsheets with advanced data operations",
+    "category": "Productivity",
+    "tags": ["excel", "spreadsheets", "data"],
+    "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+    "owner": "anthropic"
+  }
+]
