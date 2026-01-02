@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Github, Copy, Check, ExternalLink, Download } from 'lucide-react';
+import { Github, Copy, Check, ExternalLink, Download, File, Folder, ChevronRight, ChevronDown } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Anthropic, Notion } from '@lobehub/icons';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface Skill {
   id: string;
@@ -17,11 +19,22 @@ interface Skill {
   owner: string;
 }
 
+interface SkillFile {
+  path: string;
+  name: string;
+  content: string;
+  isDirectory: boolean;
+}
+
 export default function SkillDetailPage() {
   const params = useParams();
   const [skill, setSkill] = useState<Skill | null>(null);
   const [loading, setLoading] = useState(true);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [files, setFiles] = useState<SkillFile[]>([]);
+  const [selectedFile, setSelectedFile] = useState<SkillFile | null>(null);
+  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set());
+  const [loadingFiles, setLoadingFiles] = useState(false);
 
   useEffect(() => {
     fetchSkill();
@@ -34,11 +47,36 @@ export default function SkillDetailPage() {
       const data = await response.json();
       const foundSkill = data.skills.find((s: Skill) => s.id === params.id);
       setSkill(foundSkill || null);
+      
+      // Fetch files for this skill
+      if (foundSkill) {
+        fetchSkillFiles(foundSkill.id);
+      }
     } catch (error) {
       console.error('Error fetching skill:', error);
       setSkill(null);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchSkillFiles = async (skillId: string) => {
+    setLoadingFiles(true);
+    try {
+      const response = await fetch(`/api/skills/${skillId}/files`);
+      const data = await response.json();
+      setFiles(data.files || []);
+      
+      // Auto-select first non-directory file
+      const firstFile = data.files.find((f: SkillFile) => !f.isDirectory);
+      if (firstFile) {
+        setSelectedFile(firstFile);
+      }
+    } catch (error) {
+      console.error('Error fetching skill files:', error);
+      setFiles([]);
+    } finally {
+      setLoadingFiles(false);
     }
   };
 
@@ -50,6 +88,105 @@ export default function SkillDetailPage() {
     } catch (error) {
       console.error('Failed to copy:', error);
     }
+  };
+
+  const toggleFolder = (folderPath: string) => {
+    const newExpanded = new Set(expandedFolders);
+    if (newExpanded.has(folderPath)) {
+      newExpanded.delete(folderPath);
+    } else {
+      newExpanded.add(folderPath);
+    }
+    setExpandedFolders(newExpanded);
+  };
+
+  const getFileLanguage = (filename: string): string => {
+    const ext = filename.split('.').pop()?.toLowerCase();
+    const languageMap: Record<string, string> = {
+      'js': 'javascript',
+      'jsx': 'jsx',
+      'ts': 'typescript',
+      'tsx': 'tsx',
+      'py': 'python',
+      'md': 'markdown',
+      'json': 'json',
+      'yml': 'yaml',
+      'yaml': 'yaml',
+      'html': 'html',
+      'css': 'css',
+      'scss': 'scss',
+      'sh': 'bash',
+      'txt': 'text',
+    };
+    return languageMap[ext || ''] || 'text';
+  };
+
+  const buildFileTree = (files: SkillFile[]) => {
+    const tree: Record<string, any> = {};
+    
+    files.forEach(file => {
+      const parts = file.path.split('/');
+      let current = tree;
+      
+      parts.forEach((part, index) => {
+        if (!current[part]) {
+          current[part] = {
+            name: part,
+            path: parts.slice(0, index + 1).join('/'),
+            isDirectory: index < parts.length - 1 || file.isDirectory,
+            file: index === parts.length - 1 ? file : null,
+            children: {}
+          };
+        }
+        current = current[part].children;
+      });
+    });
+    
+    return tree;
+  };
+
+  const renderFileTree = (tree: Record<string, any>, level = 0) => {
+    return Object.values(tree).map((node: any) => {
+      if (node.isDirectory) {
+        const isExpanded = expandedFolders.has(node.path);
+        return (
+          <div key={node.path}>
+            <button
+              onClick={() => toggleFolder(node.path)}
+              className="w-full flex items-center gap-2 px-3 py-1.5 hover:bg-[#f5f5f5] text-left text-sm"
+              style={{ paddingLeft: `${level * 16 + 12}px` }}
+            >
+              {isExpanded ? (
+                <ChevronDown className="w-4 h-4 text-[#666] flex-shrink-0" />
+              ) : (
+                <ChevronRight className="w-4 h-4 text-[#666] flex-shrink-0" />
+              )}
+              <Folder className="w-4 h-4 text-[#666] flex-shrink-0" />
+              <span className="text-[#333] truncate">{node.name}</span>
+            </button>
+            {isExpanded && renderFileTree(node.children, level + 1)}
+          </div>
+        );
+      } else if (node.file) {
+        const isSelected = selectedFile?.path === node.file.path;
+        return (
+          <button
+            key={node.path}
+            onClick={() => setSelectedFile(node.file)}
+            className={`w-full flex items-center gap-2 px-3 py-1.5 hover:bg-[#f5f5f5] text-left text-sm ${
+              isSelected ? 'bg-[#e5e5e5]' : ''
+            }`}
+            style={{ paddingLeft: `${level * 16 + 12}px` }}
+          >
+            <File className="w-4 h-4 text-[#666] flex-shrink-0 ml-6" />
+            <span className={`truncate ${isSelected ? 'text-black font-medium' : 'text-[#666]'}`}>
+              {node.name}
+            </span>
+          </button>
+        );
+      }
+      return null;
+    });
   };
 
   const getOwnerIcon = (owner: string) => {
@@ -276,45 +413,115 @@ export default function SkillDetailPage() {
             </CardContent>
           </Card>
 
-          {/* GitHub Source Link */}
+          {/* Source Code Section */}
           <Card 
             className="border-[#eaeaea]"
             style={{
               animation: 'fadeIn 0.4s ease-out 0.1s backwards'
             }}
           >
-            <CardHeader className="pb-3">
-              <CardTitle className="text-lg">Source Code</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-center py-12">
-                <div className="mb-6">
-                  <svg className="w-20 h-20 mx-auto text-[#666]" fill="currentColor" viewBox="0 0 24 24">
-                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                  </svg>
+            <CardHeader className="pb-3 border-b border-[#eaeaea]">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-lg">Source Code</CardTitle>
+                <div className="flex gap-3">
+                  <a
+                    href={`/api/download/${skill.id}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-[#333] transition-colors text-sm font-medium"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download
+                  </a>
+                  <a
+                    href={skill.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border border-[#eaeaea] rounded-lg hover:bg-[#fafafa] transition-colors text-sm font-medium"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    GitHub
+                  </a>
                 </div>
-                <p className="text-[#666] mb-6">
-                  View the complete source code, documentation, and examples on GitHub
-                </p>
-              <div className="flex gap-3 justify-center">
-                <a
-                  href={`/api/download/${skill.id}`}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-[#333] transition-colors text-sm font-medium"
-                >
-                  <Download className="w-4 h-4" />
-                  Download Skill
-                </a>
-                <a
-                  href={skill.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black border border-[#eaeaea] rounded-lg hover:bg-[#fafafa] transition-colors text-sm font-medium"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  View on GitHub
-                </a>
               </div>
-              </div>
+            </CardHeader>
+            <CardContent className="p-0">
+              {loadingFiles ? (
+                <div className="p-6 text-center">
+                  <Skeleton className="h-96 w-full" />
+                </div>
+              ) : files.length === 0 ? (
+                <div className="p-6 text-center text-[#666]">
+                  No files found
+                </div>
+              ) : (
+                <div className="flex" style={{ height: '600px' }}>
+                  {/* File Explorer */}
+                  <div className="w-64 border-r border-[#eaeaea] overflow-y-auto">
+                    <div className="py-2">
+                      {renderFileTree(buildFileTree(files))}
+                    </div>
+                  </div>
+                  
+                  {/* Code Viewer */}
+                  <div className="flex-1 overflow-hidden flex flex-col">
+                    {selectedFile ? (
+                      <>
+                        <div className="px-4 py-3 border-b border-[#eaeaea] bg-[#fafafa]">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <File className="w-4 h-4 text-[#666]" />
+                              <span className="text-sm font-medium text-[#333]">
+                                {selectedFile.name}
+                              </span>
+                            </div>
+                            <button
+                              onClick={() => copyToClipboard(selectedFile.content, `file-${selectedFile.path}`)}
+                              className="flex items-center gap-1.5 px-3 py-1.5 text-xs hover:bg-[#e5e5e5] rounded transition-colors"
+                              title="Copy file content"
+                            >
+                              {copiedId === `file-${selectedFile.path}` ? (
+                                <>
+                                  <Check className="w-3.5 h-3.5 text-green-600" />
+                                  <span className="text-green-600">Copied</span>
+                                </>
+                              ) : (
+                                <>
+                                  <Copy className="w-3.5 h-3.5 text-[#666]" />
+                                  <span className="text-[#666]">Copy</span>
+                                </>
+                              )}
+                            </button>
+                          </div>
+                        </div>
+                        <div className="flex-1 overflow-auto">
+                          {selectedFile.content === '[Binary file]' ? (
+                            <div className="p-6 text-center text-[#666]">
+                              Binary file (cannot display content)
+                            </div>
+                          ) : (
+                            <SyntaxHighlighter
+                              language={getFileLanguage(selectedFile.name)}
+                              style={vscDarkPlus}
+                              showLineNumbers
+                              customStyle={{
+                                margin: 0,
+                                borderRadius: 0,
+                                fontSize: '13px',
+                                height: '100%',
+                              }}
+                            >
+                              {selectedFile.content}
+                            </SyntaxHighlighter>
+                          )}
+                        </div>
+                      </>
+                    ) : (
+                      <div className="flex-1 flex items-center justify-center text-[#666]">
+                        Select a file to view its contents
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
