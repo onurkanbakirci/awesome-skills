@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Github, Copy, Check, ExternalLink, Download } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Anthropic } from '@lobehub/icons';
+import { Anthropic, Notion } from '@lobehub/icons';
 
 interface Skill {
   id: string;
@@ -57,6 +57,8 @@ export default function SkillDetailPage() {
     switch (ownerLower) {
       case 'anthropic':
         return <Anthropic size={20} />;
+      case 'notion':
+        return <Notion size={20} />;
       default:
         return null;
     }

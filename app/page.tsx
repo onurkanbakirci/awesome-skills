@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Search, Github, Copy, Check, ExternalLink, Download } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Anthropic } from '@lobehub/icons';
+import { Anthropic, Notion } from '@lobehub/icons';
 
 interface Skill {
   id: string;
@@ -106,6 +106,8 @@ export default function Home() {
     switch (ownerLower) {
       case 'anthropic':
         return <Anthropic size={16} />;
+      case 'notion':
+        return <Notion size={16} />;
       default:
         return null;
     }
