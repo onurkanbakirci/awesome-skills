@@ -304,5 +304,221 @@
     "tags": ["skills", "documentation", "meta", "creation"],
     "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/writing-skills",
     "owner": "obra"
+  },
+  {
+    "id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "name": "changelog-generator",
+    "description": "Automatically generate comprehensive changelogs from commit history and pull requests",
+    "category": "Development",
+    "tags": ["changelog", "documentation", "git", "automation"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/changelog-generator",
+    "owner": "composio"
+  },
+  {
+    "id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "name": "competitive-ads-extractor",
+    "description": "Extract and analyze competitive advertising data from various platforms for market research",
+    "category": "Marketing",
+    "tags": ["ads", "competitive-analysis", "marketing", "research"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/competitive-ads-extractor",
+    "owner": "composio"
+  },
+  {
+    "id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "name": "content-research-writer",
+    "description": "Research topics and generate well-sourced, comprehensive content with proper citations",
+    "category": "Content",
+    "tags": ["content", "research", "writing", "citations"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/content-research-writer",
+    "owner": "composio"
+  },
+  {
+    "id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "name": "developer-growth-analysis",
+    "description": "Analyze coding patterns and developer growth metrics to identify improvement areas and track progress",
+    "category": "Development",
+    "tags": ["analytics", "growth", "metrics", "development"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/developer-growth-analysis",
+    "owner": "composio"
+  },
+  {
+    "id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "name": "document-skills",
+    "description": "Comprehensive document processing and management capabilities for various file formats",
+    "category": "Productivity",
+    "tags": ["documents", "processing", "management", "files"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/document-skills",
+    "owner": "composio"
+  },
+  {
+    "id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "name": "domain-name-brainstormer",
+    "description": "Generate creative and available domain name ideas for projects and businesses",
+    "category": "Business",
+    "tags": ["domains", "naming", "brainstorming", "branding"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/domain-name-brainstormer",
+    "owner": "composio"
+  },
+  {
+    "id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "name": "file-organizer",
+    "description": "Automatically organize and categorize files based on content, type, and metadata",
+    "category": "Productivity",
+    "tags": ["files", "organization", "automation", "management"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/file-organizer",
+    "owner": "composio"
+  },
+  {
+    "id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "name": "image-enhancer",
+    "description": "Enhance and optimize images with AI-powered upscaling, filtering, and improvements",
+    "category": "Creative",
+    "tags": ["images", "enhancement", "ai", "optimization"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/image-enhancer",
+    "owner": "composio"
+  },
+  {
+    "id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "name": "invoice-organizer",
+    "description": "Extract, organize, and manage invoice data with automated categorization and tracking",
+    "category": "Business",
+    "tags": ["invoices", "accounting", "organization", "automation"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/invoice-organizer",
+    "owner": "composio"
+  },
+  {
+    "id": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "name": "lead-research-assistant",
+    "description": "Research and qualify potential leads with comprehensive company and contact information",
+    "category": "Business",
+    "tags": ["leads", "research", "sales", "crm"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/lead-research-assistant",
+    "owner": "composio"
+  },
+  {
+    "id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+    "name": "meeting-insights-analyzer",
+    "description": "Analyze meeting transcripts to extract key insights, action items, and decisions",
+    "category": "Productivity",
+    "tags": ["meetings", "analysis", "insights", "transcripts"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/meeting-insights-analyzer",
+    "owner": "composio"
+  },
+  {
+    "id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+    "name": "raffle-winner-picker",
+    "description": "Fairly select random winners from participant lists with verification and transparency",
+    "category": "Utility",
+    "tags": ["raffle", "random", "selection", "winners"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/raffle-winner-picker",
+    "owner": "composio"
+  },
+  {
+    "id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+    "name": "skill-share",
+    "description": "Share and collaborate on AI skills with the community through standardized formats",
+    "category": "Development",
+    "tags": ["skills", "sharing", "collaboration", "community"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/skill-share",
+    "owner": "composio"
+  },
+  {
+    "id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+    "name": "template-skill",
+    "description": "Template and boilerplate for creating new AI skills with best practices and structure",
+    "category": "Development",
+    "tags": ["template", "boilerplate", "skills", "creation"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/template-skill",
+    "owner": "composio"
+  },
+  {
+    "id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+    "name": "video-downloader",
+    "description": "Download videos from various platforms with quality selection and format conversion",
+    "category": "Utility",
+    "tags": ["video", "download", "media", "conversion"],
+    "sourceUrl": "https://github.com/ComposioHQ/composio/tree/main/skills/video-downloader",
+    "owner": "composio"
+  },
+  {
+    "id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+    "name": "artifacts-builder",
+    "description": "Build and manage development artifacts with automated versioning and distribution",
+    "category": "Development",
+    "tags": ["artifacts", "build", "automation", "deployment"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/artifacts-builder",
+    "owner": "composio"
+  },
+  {
+    "id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+    "name": "brand-guidelines",
+    "description": "Generate comprehensive brand identity guidelines including colors, typography, logo usage, and brand voice",
+    "category": "Design",
+    "tags": ["branding", "identity", "guidelines", "design"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/brand-guidelines",
+    "owner": "composio"
+  },
+  {
+    "id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+    "name": "canvas-design",
+    "description": "Create visual designs and interactive layouts for web and mobile applications with modern design principles",
+    "category": "Design",
+    "tags": ["ui", "visual-design", "canvas", "design"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/canvas-design",
+    "owner": "composio"
+  },
+  {
+    "id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "name": "internal-comms",
+    "description": "Draft and manage internal communications, company announcements, and team updates",
+    "category": "Communication",
+    "tags": ["internal", "communications", "company", "announcements"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/internal-comms",
+    "owner": "composio"
+  },
+  {
+    "id": "0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+    "name": "mcp-builder",
+    "description": "Build Model Context Protocol integrations and custom AI tool connections for enhanced capabilities",
+    "category": "Development",
+    "tags": ["mcp", "integrations", "ai-tools", "protocol"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/mcp-builder",
+    "owner": "composio"
+  },
+  {
+    "id": "1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+    "name": "skill-creator",
+    "description": "Create new LLM skills and agent capabilities with proper templates, structure, and best practices",
+    "category": "Development",
+    "tags": ["skills", "creation", "meta", "templates"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-creator",
+    "owner": "composio"
+  },
+  {
+    "id": "2d3e4f5a-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+    "name": "slack-gif-creator",
+    "description": "Generate and find relevant GIFs for Slack conversations and team communications",
+    "category": "Communication",
+    "tags": ["slack", "gif", "social", "communication"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/slack-gif-creator",
+    "owner": "composio"
+  },
+  {
+    "id": "3e4f5a6b-7c8d-9e0f-1a2b-3c4d5e6f7a8b",
+    "name": "theme-factory",
+    "description": "Generate complete design themes including colors, typography, components, and design systems",
+    "category": "Design",
+    "tags": ["themes", "design-system", "styling", "components"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/theme-factory",
+    "owner": "composio"
+  },
+  {
+    "id": "4f5a6b7c-8d9e-0f1a-2b3c-4d5e6f7a8b9c",
+    "name": "webapp-testing",
+    "description": "Automated testing and quality assurance for web applications with comprehensive test coverage",
+    "category": "Development",
+    "tags": ["testing", "qa", "automation", "web"],
+    "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/webapp-testing",
+    "owner": "composio"
   }
 ]
