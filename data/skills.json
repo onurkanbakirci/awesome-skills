@@ -178,5 +178,131 @@
     "tags": ["specs", "notion", "tasks", "implementation", "planning", "official"],
     "sourceUrl": "https://www.notion.so/notiondevs/Notion-Skills-for-Claude-28da4445d27180c7af1df7d8615723d0",
     "owner": "notion"
+  },
+  {
+    "id": "a1b2c3d4-e5f6-4a5b-8c9d-1e2f3a4b5c6d",
+    "name": "brainstorming",
+    "description": "Facilitate creative brainstorming sessions with structured ideation techniques and collaborative thinking frameworks",
+    "category": "Productivity",
+    "tags": ["brainstorming", "ideation", "creativity", "collaboration"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
+    "owner": "obra"
+  },
+  {
+    "id": "b2c3d4e5-f6a7-4b5c-9d8e-2f3a4b5c6d7e",
+    "name": "dispatching-parallel-agents",
+    "description": "Coordinate multiple AI agents working in parallel to solve complex problems more efficiently",
+    "category": "Development",
+    "tags": ["agents", "parallel", "coordination", "efficiency"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/dispatching-parallel-agents",
+    "owner": "obra"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-4c5d-9e8f-3a4b5c6d7e8f",
+    "name": "executing-plans",
+    "description": "Execute complex development plans with systematic task completion and progress tracking",
+    "category": "Development",
+    "tags": ["planning", "execution", "project-management", "tasks"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/executing-plans",
+    "owner": "obra"
+  },
+  {
+    "id": "d4e5f6a7-b8c9-4d5e-8f9a-4b5c6d7e8f9a",
+    "name": "finishing-a-development-branch",
+    "description": "Complete and finalize development branches with proper cleanup, testing, and merge preparation",
+    "category": "Development",
+    "tags": ["git", "branches", "workflow", "completion"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
+    "owner": "obra"
+  },
+  {
+    "id": "e5f6a7b8-c9d0-4e5f-9a8b-5c6d7e8f9a0b",
+    "name": "receiving-code-review",
+    "description": "Effectively receive and respond to code review feedback with professionalism and improvement mindset",
+    "category": "Development",
+    "tags": ["code-review", "feedback", "collaboration", "improvement"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/receiving-code-review",
+    "owner": "obra"
+  },
+  {
+    "id": "f6a7b8c9-d0e1-4f5a-8b9c-6d7e8f9a0b1c",
+    "name": "requesting-code-review",
+    "description": "Prepare and request code reviews with clear context, documentation, and reviewability best practices",
+    "category": "Development",
+    "tags": ["code-review", "pull-requests", "collaboration", "documentation"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/requesting-code-review",
+    "owner": "obra"
+  },
+  {
+    "id": "a7b8c9d0-e1f2-4a5b-9c8d-7e8f9a0b1c2d",
+    "name": "subagent-driven-development",
+    "description": "Leverage specialized sub-agents for focused development tasks and modular problem-solving",
+    "category": "Development",
+    "tags": ["agents", "subagents", "modular", "development"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development",
+    "owner": "obra"
+  },
+  {
+    "id": "b8c9d0e1-f2a3-4b5c-8d9e-8f9a0b1c2d3e",
+    "name": "systematic-debugging",
+    "description": "Apply systematic debugging methodologies to identify and fix bugs efficiently and reliably",
+    "category": "Development",
+    "tags": ["debugging", "troubleshooting", "methodology", "problem-solving"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/systematic-debugging",
+    "owner": "obra"
+  },
+  {
+    "id": "c9d0e1f2-a3b4-4c5d-9e8f-9a0b1c2d3e4f",
+    "name": "test-driven-development",
+    "description": "Practice test-driven development with proper test writing, red-green-refactor cycles, and quality assurance",
+    "category": "Development",
+    "tags": ["tdd", "testing", "quality", "methodology"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
+    "owner": "obra"
+  },
+  {
+    "id": "d0e1f2a3-b4c5-4d5e-8f9a-0b1c2d3e4f5a",
+    "name": "using-git-worktrees",
+    "description": "Master Git worktrees for managing multiple working directories and parallel development workflows",
+    "category": "Development",
+    "tags": ["git", "worktrees", "workflow", "productivity"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/using-git-worktrees",
+    "owner": "obra"
+  },
+  {
+    "id": "e1f2a3b4-c5d6-4e5f-9a8b-1c2d3e4f5a6b",
+    "name": "using-superpowers",
+    "description": "Learn and utilize the full capabilities of the superpowers framework for enhanced AI-assisted development",
+    "category": "Development",
+    "tags": ["superpowers", "framework", "ai", "learning"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/using-superpowers",
+    "owner": "obra"
+  },
+  {
+    "id": "f2a3b4c5-d6e7-4f5a-8b9c-2d3e4f5a6b7c",
+    "name": "verification-before-completion",
+    "description": "Verify work completion with thorough checks, validation, and quality assurance before marking tasks done",
+    "category": "Development",
+    "tags": ["verification", "quality", "completion", "validation"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/verification-before-completion",
+    "owner": "obra"
+  },
+  {
+    "id": "a3b4c5d6-e7f8-4a5b-9c8d-3e4f5a6b7c8d",
+    "name": "writing-plans",
+    "description": "Create comprehensive development plans with clear objectives, steps, and success criteria",
+    "category": "Development",
+    "tags": ["planning", "documentation", "strategy", "organization"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/writing-plans",
+    "owner": "obra"
+  },
+  {
+    "id": "b4c5d6e7-f8a9-4b5c-8d9e-4f5a6b7c8d9e",
+    "name": "writing-skills",
+    "description": "Design and document new AI skills with proper structure, examples, and best practices",
+    "category": "Development",
+    "tags": ["skills", "documentation", "meta", "creation"],
+    "sourceUrl": "https://github.com/obra/superpowers/tree/main/skills/writing-skills",
+    "owner": "obra"
   }
 ]
