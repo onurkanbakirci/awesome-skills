@@ -239,21 +239,21 @@ export default function Home() {
                     </div>
 
                     <CardHeader className="pb-0 mb-2">
-                      <div className="flex items-start justify-between gap-2 mb-0.5">
-                        <div className="flex items-center gap-2 flex-1 pr-8">
-                          {getOwnerIcon(skill.owner) && (
-                            <div className="flex-shrink-0 text-[#666]">
-                              {getOwnerIcon(skill.owner)}
-                            </div>
-                          )}
-                          <CardTitle className="text-lg flex-1">
-                            {highlightText(skill.name, searchQuery)}
-                          </CardTitle>
-                        </div>
+                      <div className="flex items-center gap-2 mb-1">
+                        {getOwnerIcon(skill.owner) && (
+                          <div className="flex-shrink-0 text-[#666]">
+                            {getOwnerIcon(skill.owner)}
+                          </div>
+                        )}
+                        <CardTitle className="text-lg flex-1">
+                          {highlightText(skill.name, searchQuery)}
+                        </CardTitle>
                       </div>
-                      <CardDescription className="text-xs">
-                        {skill.category}
-                      </CardDescription>
+                      {skill.tags.includes('official') && (
+                        <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded bg-blue-50 text-blue-600 border border-blue-200 w-fit">
+                          Official
+                        </span>
+                      )}
                     </CardHeader>
                     <CardContent className="flex-1 flex flex-col pt-0">
                       <p className="text-sm text-[#666] mb-3 leading-relaxed flex-1">
@@ -262,7 +262,7 @@ export default function Home() {
 
                       {/* Tags */}
                       <div className="flex flex-wrap gap-1.5 mb-3">
-                        {skill.tags.map((tag) => (
+                        {skill.tags.filter(tag => tag !== 'official').map((tag) => (
                           <span
                             key={tag}
                             className="px-2 py-0.5 text-xs rounded-md bg-[#fafafa] text-[#666] border border-[#eaeaea]"
@@ -277,12 +277,12 @@ export default function Home() {
                         <p className="text-xs text-[#666] mb-1">Download:</p>
                         <div className="p-2 bg-[#f5f5f5] rounded border border-[#d4d4d4] flex items-center justify-between gap-2">
                           <code className="text-xs text-black font-mono flex-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                            curl {typeof window !== 'undefined' ? window.location.origin : ''}/api/download/{skill.id} -o skill.zip
+                            curl {typeof window !== 'undefined' ? window.location.origin : ''}/api/download/{skill.id} -o {skill.owner}-{skill.name}.zip
                           </code>
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
-                              copyToClipboard(`curl ${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/api/download/${skill.id} -o skill.zip`, skill.id);
+                              copyToClipboard(`curl ${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/api/download/${skill.id} -o ${skill.owner}-${skill.name}.zip`, skill.id);
                             }}
                             className="flex-shrink-0 p-1 hover:bg-[#e5e5e5] rounded transition-colors"
                             title="Copy to clipboard"

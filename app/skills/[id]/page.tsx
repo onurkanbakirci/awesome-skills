@@ -87,7 +87,12 @@ export default function SkillDetailPage() {
         </nav>
         <div className="container mx-auto px-6 py-6">
           <div className="max-w-5xl mx-auto">
-            <Card className="mb-6 border-[#eaeaea]">
+            <Card 
+              className="mb-6 border-[#eaeaea]"
+              style={{
+                animation: 'fadeIn 0.4s ease-out'
+              }}
+            >
               <CardHeader className="pb-3">
                 <Skeleton className="h-8 w-1/2 mb-2" />
                 <Skeleton className="h-4 w-full" />
@@ -101,7 +106,12 @@ export default function SkillDetailPage() {
                 <Skeleton className="h-12 w-full" />
               </CardContent>
             </Card>
-            <Card className="border-[#eaeaea]">
+            <Card 
+              className="border-[#eaeaea]"
+              style={{
+                animation: 'fadeIn 0.4s ease-out 0.1s backwards'
+              }}
+            >
               <CardHeader className="pb-3">
                 <Skeleton className="h-6 w-32" />
               </CardHeader>
@@ -186,9 +196,14 @@ export default function SkillDetailPage() {
       <div className="container mx-auto px-6 py-6">
         <div className="max-w-5xl mx-auto">
           {/* Skill Info Card */}
-          <Card className="mb-6 border-[#eaeaea]">
+          <Card 
+            className="mb-6 border-[#eaeaea]"
+            style={{
+              animation: 'fadeIn 0.4s ease-out'
+            }}
+          >
             <CardHeader className="pb-3">
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
                     {getOwnerIcon(skill.owner) && (
@@ -197,23 +212,25 @@ export default function SkillDetailPage() {
                       </div>
                     )}
                     <CardTitle className="text-2xl">{skill.name}</CardTitle>
+                    {skill.tags.includes('official') && (
+                      <span className="flex-shrink-0 px-2.5 py-1 text-xs font-medium rounded bg-blue-50 text-blue-600 border border-blue-200">
+                        Official
+                      </span>
+                    )}
                   </div>
                   <p className="text-[#666] text-base">{skill.description}</p>
                 </div>
-                <span className="px-2 py-1 text-xs rounded-md bg-[#f5f5f5] text-[#666] border border-[#eaeaea] whitespace-nowrap">
-                  {skill.category}
-                </span>
               </div>
             </CardHeader>
             <CardContent className="pt-0">
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-4">
-                {skill.tags.map((tag) => (
+                {skill.tags.filter(tag => tag !== 'official').map((tag) => (
                   <span
                     key={tag}
                     className="px-2 py-1 text-xs rounded-md bg-[#fafafa] text-[#666] border border-[#eaeaea]"
                   >
-                    #{tag}
+                    {tag}
                   </span>
                 ))}
               </div>
@@ -223,10 +240,10 @@ export default function SkillDetailPage() {
                 <p className="text-xs text-[#666] mb-1.5">Download with curl:</p>
                 <div className="p-3 bg-[#f5f5f5] rounded-md border border-[#d4d4d4] flex items-center justify-between gap-2">
                   <code className="text-sm text-black font-mono flex-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                    curl {typeof window !== 'undefined' ? window.location.origin : ''}/api/download/{skill.id} -o skill.zip
+                    curl {typeof window !== 'undefined' ? window.location.origin : ''}/api/download/{skill.id} -o {skill.owner}-{skill.name}.zip
                   </code>
                   <button
-                    onClick={() => copyToClipboard(`curl ${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/api/download/${skill.id} -o skill.zip`, skill.id)}
+                    onClick={() => copyToClipboard(`curl ${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/api/download/${skill.id} -o ${skill.owner}-${skill.name}.zip`, skill.id)}
                     className="flex-shrink-0 p-1.5 hover:bg-[#e5e5e5] rounded transition-colors"
                     title="Copy to clipboard"
                   >
@@ -242,7 +259,12 @@ export default function SkillDetailPage() {
           </Card>
 
           {/* GitHub Source Link */}
-          <Card className="border-[#eaeaea]">
+          <Card 
+            className="border-[#eaeaea]"
+            style={{
+              animation: 'fadeIn 0.4s ease-out 0.1s backwards'
+            }}
+          >
             <CardHeader className="pb-3">
               <CardTitle className="text-lg">Source Code</CardTitle>
             </CardHeader>
@@ -281,6 +303,17 @@ export default function SkillDetailPage() {
       </div>
 
       <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         /* Hide scrollbar but keep functionality */
         :global(.scrollbar-hide) {
           -ms-overflow-style: none;

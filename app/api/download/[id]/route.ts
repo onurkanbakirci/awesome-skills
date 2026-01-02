@@ -6,10 +6,10 @@ import { Readable } from 'stream';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const skillDir = path.join(process.cwd(), 'public', 'skills', id);
 
     // Check if skill directory exists
@@ -19,6 +19,17 @@ export async function GET(
         { status: 404 }
       );
     }
+
+    // Load skills data to get owner and name
+    const skillsData = JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), 'data', 'skills.json'), 'utf-8')
+    );
+    const skill = skillsData.find((s: any) => s.id === id);
+    
+    // Generate filename as owner-skillname.zip
+    const filename = skill 
+      ? `${skill.owner}-${skill.name}.zip`
+      : `${id}.zip`;
 
     // Create a zip archive
     const archive = archiver('zip', {
@@ -42,7 +53,7 @@ export async function GET(
     return new NextResponse(buffer, {
       headers: {
         'Content-Type': 'application/zip',
-        'Content-Disposition': `attachment; filename="${id}.zip"`,
+        'Content-Disposition': `attachment; filename="${filename}"`,
       },
     });
   } catch (error) {
@@ -53,4 +64,3 @@ export async function GET(
     );
   }
 }
-
