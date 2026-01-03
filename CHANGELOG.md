@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.3...v1.0.4) (2026-01-03)
+
+
+### Bug Fixes
+
+* Update base URL and add Google Analytics to the application ([04a03b7](https://github.com/onurkanbakirci/awesome-skills/commit/04a03b7f1b2b34bcc7ad342cd1169902106e0896))
+
 ## [1.0.3](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.2...v1.0.3) (2026-01-03)
 
 
