@@ -6,11 +6,13 @@
   <a href="https://openskills.space">https://openskills.space</a>
 </p>
 
+<!-- 
 <h2 align="center">Sponsors</h3>
 
 <div align="center">
   <sub><a href="https://github.com/sponsors/onurkanbakirci">Be my sponsor and your logo will be here!</a></sub>
 </div>
+-->
 
 
 ---
