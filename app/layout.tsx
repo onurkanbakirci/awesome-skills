@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
   icons: {
     icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
       { url: '/icon.png', sizes: '48x48', type: 'image/png' },
       { url: '/icon.png', sizes: '96x96', type: 'image/png' },
       { url: '/icon.png', sizes: '192x192', type: 'image/png' },
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
       { url: '/icon.png', sizes: '180x180', type: 'image/png' },
       { url: '/icon.png', sizes: '192x192', type: 'image/png' },
     ],
-    shortcut: [{ url: '/icon.png', sizes: '196x196' }],
+    shortcut: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
   },
   openGraph: {
     title: "Agent Skills - Find Skills for Your Next Project",

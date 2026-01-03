@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Search, Github, Copy, Check, ExternalLink, Download } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Anthropic, Notion } from '@lobehub/icons';
 
 interface Skill {
@@ -35,6 +36,24 @@ export default function Home() {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [selectedOwner, setSelectedOwner] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedTag, setSelectedTag] = useState<string>('all');
+  const [allSkills, setAllSkills] = useState<Skill[]>([]);
+
+  // Load all skills initially for filter options
+  useEffect(() => {
+    const loadAllSkills = async () => {
+      try {
+        const response = await fetch('/api/skills');
+        const data = await response.json();
+        setAllSkills(data.skills || []);
+      } catch (error) {
+        console.error('Error loading all skills:', error);
+      }
+    };
+    loadAllSkills();
+  }, []);
 
   // Rotating text effect
   useEffect(() => {
@@ -49,13 +68,13 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Search effect with debouncing
+  // Search and filter effect with debouncing
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchSkills();
     }, 300);
     return () => clearTimeout(timer);
-  }, [searchQuery]);
+  }, [searchQuery, selectedOwner, selectedCategory, selectedTag]);
 
   const fetchSkills = async () => {
     setLoading(true);
@@ -63,6 +82,15 @@ export default function Home() {
       const params = new URLSearchParams();
       if (searchQuery) {
         params.append('q', searchQuery);
+      }
+      if (selectedOwner && selectedOwner !== 'all') {
+        params.append('owner', selectedOwner);
+      }
+      if (selectedCategory && selectedCategory !== 'all') {
+        params.append('category', selectedCategory);
+      }
+      if (selectedTag && selectedTag !== 'all') {
+        params.append('tag', selectedTag);
       }
 
       const response = await fetch(`/api/skills?${params}`);
@@ -84,6 +112,22 @@ export default function Home() {
     } catch (error) {
       console.error('Failed to copy:', error);
     }
+  };
+
+  // Get unique filter options
+  const getUniqueOwners = () => {
+    const owners = new Set(allSkills.map(skill => skill.owner));
+    return Array.from(owners).sort();
+  };
+
+  const getUniqueCategories = () => {
+    const categories = new Set(allSkills.map(skill => skill.category));
+    return Array.from(categories).sort();
+  };
+
+  const getUniqueTags = () => {
+    const tags = new Set(allSkills.flatMap(skill => skill.tags));
+    return Array.from(tags).filter(tag => tag !== 'official').sort();
   };
 
   const highlightText = (text: string, query: string) => {
@@ -275,7 +319,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <div className="container mx-auto px-6 pt-24 pb-16">
+      <div className="container mx-auto px-6 pt-24 pb-4">
         <div className="max-w-4xl mx-auto">
           {/* Heading */}
           <div className="text-center mb-6">
@@ -312,12 +356,60 @@ export default function Home() {
               className="h-14 text-base bg-white border-[#e5e5e5] text-black placeholder:text-[#999] focus:border-black hover:border-[#999] transition-all duration-200 pl-12 rounded-lg shadow-sm"
             />
           </div>
+
+          {/* Filters */}
+          <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
+            <Select value={selectedOwner} onValueChange={setSelectedOwner}>
+              <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
+                <SelectValue placeholder="Filter by owner" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Owners</SelectItem>
+                {getUniqueOwners().map((owner) => (
+                  <SelectItem key={owner} value={owner}>
+                    <div className="flex items-center gap-2">
+                      {getOwnerIcon(owner)}
+                      <span>{owner}</span>
+                    </div>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
+                <SelectValue placeholder="Filter by category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Categories</SelectItem>
+                {getUniqueCategories().map((category) => (
+                  <SelectItem key={category} value={category}>
+                    {category}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <Select value={selectedTag} onValueChange={setSelectedTag}>
+              <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
+                <SelectValue placeholder="Filter by tag" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Tags</SelectItem>
+                {getUniqueTags().map((tag) => (
+                  <SelectItem key={tag} value={tag}>
+                    {tag}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
       </div>
 
       {/* Skills Grid Section */}
       <div className="bg-white border-t border-[#eaeaea]">
-        <div className="container mx-auto px-6 py-16">
+        <div className="container mx-auto px-6 pt-8 pb-16">
           <div className="max-w-6xl mx-auto">
             {/* Loading State */}
             {loading && (

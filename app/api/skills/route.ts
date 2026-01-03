@@ -9,12 +9,16 @@ interface Skill {
   tags: string[];
   installation: string;
   sourceUrl: string;
+  owner: string;
 }
 
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get('q')?.toLowerCase() || '';
+    const owner = searchParams.get('owner')?.toLowerCase() || '';
+    const category = searchParams.get('category')?.toLowerCase() || '';
+    const tag = searchParams.get('tag')?.toLowerCase() || '';
 
     let skills: Skill[] = skillsData as Skill[];
 
@@ -24,6 +28,23 @@ export async function GET(request: NextRequest) {
         const searchableText = `${skill.name} ${skill.description}`.toLowerCase();
         return searchableText.includes(query);
       });
+    }
+
+    // Apply owner filter
+    if (owner) {
+      skills = skills.filter((skill) => skill.owner?.toLowerCase() === owner);
+    }
+
+    // Apply category filter
+    if (category) {
+      skills = skills.filter((skill) => skill.category?.toLowerCase() === category);
+    }
+
+    // Apply tag filter
+    if (tag) {
+      skills = skills.filter((skill) => 
+        skill.tags?.some(t => t.toLowerCase() === tag)
+      );
     }
 
     // Sort by name

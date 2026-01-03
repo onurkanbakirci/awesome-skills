@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@lobehub/icons": "^4.0.2",
+    "@radix-ui/react-select": "^2.2.6",
     "@types/react-syntax-highlighter": "^15.5.13",
     "archiver": "^7.0.1",
     "class-variance-authority": "^0.7.1",
