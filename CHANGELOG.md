@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.2...v1.0.3) (2026-01-03)
+
+
+### Bug Fixes
+
+* Update README.md to improve formatting and add clarity ([2d8177b](https://github.com/onurkanbakirci/awesome-skills/commit/2d8177b35fc5dd4c5e4dd4ea952160519b72acb3))
+
 ## [1.0.2](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.1...v1.0.2) (2026-01-03)
 
 
