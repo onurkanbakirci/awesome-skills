@@ -2,6 +2,8 @@
   <img width="558" height="300" alt="Agent Skills Project" src="./public/og_card.png" />
   <br>
   <small>Browse, search and download AI agent skills</small>
+  <br>
+  <a href="https://openskills.space">https://openskills.space</a>
 </p>
 
 <h2 align="center">Sponsors</h3>
