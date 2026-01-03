@@ -64,7 +64,7 @@ export function Navbar() {
 
             {/* GitHub Button */}
             <a
-              href="https://github.com"
+              href="https://github.com/onurkanbakirci/awesome-skills"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 text-sm text-black bg-[#fafafa] hover:bg-[#f0f0f0] rounded-lg transition-colors border border-[#eaeaea]"
