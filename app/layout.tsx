@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
     images: [
       {
-        url: 'https://openskills.space/og_card_linkedin.png',
-        secureUrl: 'https://openskills.space/og_card_linkedin.png',
+        url: 'https://openskills.space/og_card.png',
+        secureUrl: 'https://openskills.space/og_card.png',
         width: 1200,
         height: 630,
         alt: 'Agent Skills - Find a skill for your AI agent',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Agent Skills - Find Skills for Your Next Project",
     description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
     images: {
-      url: 'https://openskills.space/og_card_linkedin.png',
+      url: 'https://openskills.space/og_card.png',
       alt: 'Agent Skills - Find a skill for your AI agent',
     },
   },
