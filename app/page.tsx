@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Input } from '@/components/ui/input';
-import { Search, Github, Copy, Check, ExternalLink, Download } from 'lucide-react';
+import { Search, Copy, Check, ExternalLink, Download } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Anthropic, Notion } from '@lobehub/icons';
+import { Navbar } from '@/components/navbar';
 
 interface Skill {
   id: string;
@@ -290,33 +291,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#fafafa]">
       {/* Navbar */}
-      <nav className="bg-white border-b border-[#eaeaea]">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo/Title */}
-            <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-              <img 
-                src="/icon.png" 
-                alt="Agent Skills Logo" 
-                width="120" 
-                height="120"
-                className="object-contain"
-              />
-            </a>
-
-            {/* GitHub Button */}
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm text-black bg-[#fafafa] hover:bg-[#f0f0f0] rounded-lg transition-colors border border-[#eaeaea]"
-            >
-              <Github className="w-4 h-4" />
-              <span>GitHub</span>
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <div className="container mx-auto px-6 pt-24 pb-4">
