@@ -10,7 +10,9 @@
   <sub><a href="https://github.com/sponsors/onurkanbakirci">Be my sponsor and your logo will be here!</a></sub>
 </div>
 
+
 ---
+
 
 Welcome to the **Agent Skills Project**! This is a modern web application for browsing, searching, and downloading AI agent skills from various sources including Anthropic, Notion, Composio, and many other contributors from the community.
 
