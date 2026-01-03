@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.6...v1.0.7) (2026-01-03)
+
+
+### Bug Fixes
+
+* Update metadata image URLs in layout.tsx for enhanced social media sharing ([cbefcdd](https://github.com/onurkanbakirci/awesome-skills/commit/cbefcdd43654a69652f126b019fd21396375fa1b))
+
 ## [1.0.6](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.5...v1.0.6) (2026-01-03)
 
 
