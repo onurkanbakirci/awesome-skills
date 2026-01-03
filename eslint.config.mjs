@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Ignore skills folder to prevent build errors:
+    "public/skills/**",
   ]),
 ]);
 
