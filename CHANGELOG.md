@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.5...v1.0.6) (2026-01-03)
+
+
+### Bug Fixes
+
+* Enhance metadata in layout.tsx for improved SEO and social sharing ([3f4aaca](https://github.com/onurkanbakirci/awesome-skills/commit/3f4aaca6cd4dffed70445f0f8e92bd87af16176e))
+
 ## [1.0.5](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.4...v1.0.5) (2026-01-03)
 
 
