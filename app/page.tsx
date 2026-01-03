@@ -105,12 +105,12 @@ export default function Home() {
     const ownerLower = owner.toLowerCase();
     switch (ownerLower) {
       case 'anthropic':
-        return <Anthropic size={16} style={{ color: '#D97757' }} />;
+        return <Anthropic size={20} style={{ color: '#D97757' }} />;
       case 'notion':
-        return <Notion size={16} style={{ color: '#000000' }} />;
+        return <Notion size={20} style={{ color: '#000000' }} />;
       case 'obra':
         return (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="#6366F1"/>
           </svg>
         );
@@ -119,9 +119,119 @@ export default function Home() {
           <img 
             src="https://avatars.githubusercontent.com/u/128464815?s=200&v=4" 
             alt="Composio" 
-            width="16" 
-            height="16" 
+            width="20" 
+            height="20" 
             style={{ borderRadius: '3px' }}
+          />
+        );
+      case 'lackeyjb':
+        return (
+          <img 
+            src={`https://github.com/lackeyjb.png`}
+            alt="lackeyjb" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'k-dense-ai':
+        return (
+          <img 
+            src={`https://github.com/K-Dense-AI.png`}
+            alt="K-Dense-AI" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '3px' }}
+          />
+        );
+      case 'conorluddy':
+        return (
+          <img 
+            src={`https://github.com/conorluddy.png`}
+            alt="conorluddy" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'alonw0':
+        return (
+          <img 
+            src={`https://github.com/alonw0.png`}
+            alt="alonw0" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'pleaseprompto':
+        return (
+          <img 
+            src={`https://github.com/PleasePrompto.png`}
+            alt="PleasePrompto" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'wrsmith108':
+        return (
+          <img 
+            src={`https://github.com/wrsmith108.png`}
+            alt="wrsmith108" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'zxkane':
+        return (
+          <img 
+            src={`https://github.com/zxkane.png`}
+            alt="zxkane" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'sanjay3290':
+        return (
+          <img 
+            src={`https://github.com/sanjay3290.png`}
+            alt="sanjay3290" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'jthack':
+        return (
+          <img 
+            src={`https://github.com/jthack.png`}
+            alt="jthack" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'fvadicamo':
+        return (
+          <img 
+            src={`https://github.com/fvadicamo.png`}
+            alt="fvadicamo" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'muratcankoylan':
+        return (
+          <img 
+            src={`https://github.com/muratcankoylan.png`}
+            alt="muratcankoylan" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
           />
         );
       default:
@@ -136,10 +246,14 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo/Title */}
-            <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div className="w-6 h-6 bg-black flex items-center justify-center" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}>
-              </div>
-              <span className="text-sm font-normal text-black">LLM Skills</span>
+            <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <img 
+                src="/icon.png" 
+                alt="LLM Skills Logo" 
+                width="72" 
+                height="72"
+                className="object-contain"
+              />
             </a>
 
             {/* GitHub Button */}

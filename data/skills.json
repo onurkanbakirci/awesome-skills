@@ -520,5 +520,230 @@
     "tags": ["testing", "qa", "automation", "web", "official"],
     "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/webapp-testing",
     "owner": "composio"
+  },
+  {
+    "id": "5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+    "name": "playwright-skill",
+    "description": "Automate browser testing and web scraping using Playwright for cross-browser compatibility",
+    "category": "Development",
+    "tags": ["playwright", "testing", "automation", "browser"],
+    "sourceUrl": "https://github.com/lackeyjb/playwright-skill/tree/main/skills/playwright-skill",
+    "owner": "lackeyjb"
+  },
+  {
+    "id": "6b7c8d9e-0f1a-2b3c-4d5e-6f7a8b9c0d1e",
+    "name": "claude-scientific-skills",
+    "description": "Advanced scientific computing and data analysis capabilities for research and academic applications",
+    "category": "Research",
+    "tags": ["science", "research", "data-analysis", "academic"],
+    "sourceUrl": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills",
+    "owner": "K-Dense-AI"
+  },
+  {
+    "id": "7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+    "name": "ios-simulator-skill",
+    "description": "Control and interact with iOS Simulator for app development and testing workflows",
+    "category": "Development",
+    "tags": ["ios", "simulator", "mobile", "testing"],
+    "sourceUrl": "https://github.com/conorluddy/ios-simulator-skill/tree/main/skill",
+    "owner": "conorluddy"
+  },
+  {
+    "id": "8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+    "name": "web-asset-generator",
+    "description": "Generate optimized web assets including favicons, icons, and images for web applications",
+    "category": "Design",
+    "tags": ["assets", "icons", "images", "optimization"],
+    "sourceUrl": "https://github.com/alonw0/web-asset-generator/tree/main/skills/web-asset-generator",
+    "owner": "alonw0"
+  },
+  {
+    "id": "9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+    "name": "notebooklm-skill",
+    "description": "Enable Claude to communicate directly with Google NotebookLM notebooks for source-grounded answers",
+    "category": "Productivity",
+    "tags": ["notebooklm", "research", "documents", "automation"],
+    "sourceUrl": "https://github.com/PleasePrompto/notebooklm-skill",
+    "owner": "PleasePrompto"
+  },
+  {
+    "id": "0f1a2b3c-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+    "name": "linear",
+    "description": "Integrate with Linear issue tracking for project management and task automation",
+    "category": "Productivity",
+    "tags": ["linear", "project-management", "issues", "tracking"],
+    "sourceUrl": "https://github.com/wrsmith108/linear-claude-skill/tree/main/skills/linear",
+    "owner": "wrsmith108"
+  },
+  {
+    "id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+    "name": "aws-skills",
+    "description": "AWS cloud infrastructure management and deployment automation capabilities",
+    "category": "Cloud",
+    "tags": ["aws", "cloud", "infrastructure", "deployment"],
+    "sourceUrl": "https://github.com/zxkane/aws-skills",
+    "owner": "zxkane"
+  },
+  {
+    "id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+    "name": "postgres",
+    "description": "PostgreSQL database management, query optimization, and schema design",
+    "category": "Database",
+    "tags": ["postgres", "database", "sql", "data"],
+    "sourceUrl": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres",
+    "owner": "sanjay3290"
+  },
+  {
+    "id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+    "name": "imagen",
+    "description": "Generate and manipulate images using AI-powered image generation and editing",
+    "category": "Creative",
+    "tags": ["images", "ai", "generation", "editing"],
+    "sourceUrl": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen",
+    "owner": "sanjay3290"
+  },
+  {
+    "id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+    "name": "ffuf-skill",
+    "description": "Web fuzzing and security testing using ffuf for vulnerability discovery",
+    "category": "Security",
+    "tags": ["security", "fuzzing", "testing", "vulnerabilities"],
+    "sourceUrl": "https://github.com/jthack/ffuf_claude_skill/tree/main/ffuf-skill",
+    "owner": "jthack"
+  },
+  {
+    "id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+    "name": "creating-skills",
+    "description": "Learn and practice creating new AI skills with best practices and templates",
+    "category": "Development",
+    "tags": ["skills", "meta", "creation", "templates"],
+    "sourceUrl": "https://github.com/fvadicamo/dev-agent-skills/tree/main/skills/creating-skills",
+    "owner": "fvadicamo"
+  },
+  {
+    "id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+    "name": "git-commit",
+    "description": "Create well-structured git commits with conventional commit messages",
+    "category": "Development",
+    "tags": ["git", "commits", "version-control", "workflow"],
+    "sourceUrl": "https://github.com/fvadicamo/dev-agent-skills/tree/main/skills/git-commit",
+    "owner": "fvadicamo"
+  },
+  {
+    "id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+    "name": "github-pr-creation",
+    "description": "Automate GitHub pull request creation with templates and best practices",
+    "category": "Development",
+    "tags": ["github", "pull-requests", "automation", "workflow"],
+    "sourceUrl": "https://github.com/fvadicamo/dev-agent-skills/tree/main/skills/github-pr-creation",
+    "owner": "fvadicamo"
+  },
+  {
+    "id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+    "name": "github-pr-merge",
+    "description": "Manage GitHub pull request merging with safety checks and automation",
+    "category": "Development",
+    "tags": ["github", "pull-requests", "merge", "workflow"],
+    "sourceUrl": "https://github.com/fvadicamo/dev-agent-skills/tree/main/skills/github-pr-merge",
+    "owner": "fvadicamo"
+  },
+  {
+    "id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+    "name": "github-pr-review",
+    "description": "Conduct thorough GitHub pull request reviews with quality standards",
+    "category": "Development",
+    "tags": ["github", "pull-requests", "code-review", "quality"],
+    "sourceUrl": "https://github.com/fvadicamo/dev-agent-skills/tree/main/skills/github-pr-review",
+    "owner": "fvadicamo"
+  },
+  {
+    "id": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+    "name": "advanced-evaluation",
+    "description": "Advanced techniques for evaluating AI agent performance and quality",
+    "category": "AI Engineering",
+    "tags": ["evaluation", "testing", "quality", "metrics"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/advanced-evaluation",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+    "name": "context-compression",
+    "description": "Compress and optimize context for efficient AI agent processing",
+    "category": "AI Engineering",
+    "tags": ["context", "optimization", "compression", "efficiency"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-compression",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+    "name": "context-degradation",
+    "description": "Handle and mitigate context degradation in long-running agent sessions",
+    "category": "AI Engineering",
+    "tags": ["context", "degradation", "management", "quality"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-degradation",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+    "name": "context-fundamentals",
+    "description": "Learn fundamental concepts and best practices for context engineering",
+    "category": "AI Engineering",
+    "tags": ["context", "fundamentals", "learning", "best-practices"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-fundamentals",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+    "name": "context-optimization",
+    "description": "Optimize context usage for improved AI agent performance and efficiency",
+    "category": "AI Engineering",
+    "tags": ["context", "optimization", "performance", "efficiency"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-optimization",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+    "name": "evaluation",
+    "description": "Systematic evaluation methods for AI agents and their outputs",
+    "category": "AI Engineering",
+    "tags": ["evaluation", "testing", "quality", "assessment"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/evaluation",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+    "name": "memory-systems",
+    "description": "Design and implement memory systems for stateful AI agents",
+    "category": "AI Engineering",
+    "tags": ["memory", "state", "systems", "architecture"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/memory-systems",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+    "name": "multi-agent-patterns",
+    "description": "Design patterns and architectures for coordinating multiple AI agents",
+    "category": "AI Engineering",
+    "tags": ["multi-agent", "patterns", "coordination", "architecture"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/multi-agent-patterns",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+    "name": "project-development",
+    "description": "Complete project development workflow from planning to deployment",
+    "category": "Development",
+    "tags": ["project", "development", "workflow", "planning"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/project-development",
+    "owner": "muratcankoylan"
+  },
+  {
+    "id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "name": "tool-design",
+    "description": "Design and implement effective tools and APIs for AI agents",
+    "category": "AI Engineering",
+    "tags": ["tools", "design", "api", "architecture"],
+    "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/tool-design",
+    "owner": "muratcankoylan"
   }
 ]

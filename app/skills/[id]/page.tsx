@@ -212,6 +212,116 @@ export default function SkillDetailPage() {
             style={{ borderRadius: '4px' }}
           />
         );
+      case 'lackeyjb':
+        return (
+          <img 
+            src={`https://github.com/lackeyjb.png`}
+            alt="lackeyjb" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'k-dense-ai':
+        return (
+          <img 
+            src={`https://github.com/K-Dense-AI.png`}
+            alt="K-Dense-AI" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '4px' }}
+          />
+        );
+      case 'conorluddy':
+        return (
+          <img 
+            src={`https://github.com/conorluddy.png`}
+            alt="conorluddy" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'alonw0':
+        return (
+          <img 
+            src={`https://github.com/alonw0.png`}
+            alt="alonw0" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'pleaseprompto':
+        return (
+          <img 
+            src={`https://github.com/PleasePrompto.png`}
+            alt="PleasePrompto" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'wrsmith108':
+        return (
+          <img 
+            src={`https://github.com/wrsmith108.png`}
+            alt="wrsmith108" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'zxkane':
+        return (
+          <img 
+            src={`https://github.com/zxkane.png`}
+            alt="zxkane" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'sanjay3290':
+        return (
+          <img 
+            src={`https://github.com/sanjay3290.png`}
+            alt="sanjay3290" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'jthack':
+        return (
+          <img 
+            src={`https://github.com/jthack.png`}
+            alt="jthack" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'fvadicamo':
+        return (
+          <img 
+            src={`https://github.com/fvadicamo.png`}
+            alt="fvadicamo" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
+      case 'muratcankoylan':
+        return (
+          <img 
+            src={`https://github.com/muratcankoylan.png`}
+            alt="muratcankoylan" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
       default:
         return null;
     }
@@ -223,10 +333,14 @@ export default function SkillDetailPage() {
         <nav className="bg-white border-b border-[#eaeaea]">
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between h-16">
-              <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="w-6 h-6 bg-black flex items-center justify-center" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}>
-                </div>
-                <span className="text-sm font-normal text-black">LLM Skills</span>
+              <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                <img 
+                  src="/icon.png" 
+                  alt="LLM Skills Logo" 
+                  width="72" 
+                  height="72"
+                  className="object-contain"
+                />
               </a>
               <a
                 href="https://github.com"
@@ -291,10 +405,14 @@ export default function SkillDetailPage() {
         <nav className="bg-white border-b border-[#eaeaea]">
           <div className="container mx-auto px-6">
             <div className="flex items-center justify-between h-16">
-              <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                <div className="w-6 h-6 bg-black flex items-center justify-center" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}>
-                </div>
-                <span className="text-sm font-normal text-black">LLM Skills</span>
+              <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                <img 
+                  src="/icon.png" 
+                  alt="LLM Skills Logo" 
+                  width="72" 
+                  height="72"
+                  className="object-contain"
+                />
               </a>
               <a
                 href="https://github.com"
@@ -327,10 +445,14 @@ export default function SkillDetailPage() {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo/Title */}
-            <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div className="w-6 h-6 bg-black flex items-center justify-center" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}>
-              </div>
-              <span className="text-sm font-normal text-black">LLM Skills</span>
+            <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <img 
+                src="/icon.png" 
+                alt="LLM Skills Logo" 
+                width="72" 
+                height="72"
+                className="object-contain"
+              />
             </a>
 
             {/* GitHub Button */}

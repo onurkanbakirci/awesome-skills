@@ -48,19 +48,34 @@ async function downloadGitHubFolder(skill: Skill): Promise<void> {
     // Convert GitHub tree URL to API URL
     const apiUrl = skill.sourceUrl
       .replace('https://github.com/', 'https://api.github.com/repos/')
-      .replace('/tree/main/', '/contents/');
+      .replace('/tree/main/', '/contents/')
+      .replace('/tree/master/', '/contents/');
 
     console.log(`Downloading ${skill.name}...`);
     
+    // Prepare headers with optional GitHub token
+    const headers: Record<string, string> = {
+      'User-Agent': 'skills-downloader',
+      'Accept': 'application/vnd.github.v3+json'
+    };
+    
+    // Add GitHub token if available in environment
+    if (process.env.GITHUB_TOKEN) {
+      headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+    }
+    
     // Fetch directory contents from GitHub API
-    const response = await fetch(apiUrl, {
-      headers: {
-        'User-Agent': 'skills-downloader',
-        'Accept': 'application/vnd.github.v3+json'
-      }
-    });
+    const response = await fetch(apiUrl, { headers });
 
     if (!response.ok) {
+      if (response.status === 403) {
+        const rateLimitRemaining = response.headers.get('x-ratelimit-remaining');
+        const rateLimitReset = response.headers.get('x-ratelimit-reset');
+        if (rateLimitRemaining === '0' && rateLimitReset) {
+          const resetDate = new Date(parseInt(rateLimitReset) * 1000);
+          throw new Error(`Rate limit exceeded. Resets at ${resetDate.toLocaleString()}`);
+        }
+      }
       throw new Error(`Failed to fetch ${skill.name}: ${response.statusText}`);
     }
 
