@@ -3,11 +3,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Github, Copy, Check, ExternalLink, Download, File, Folder, ChevronRight, ChevronDown } from 'lucide-react';
+import { Copy, Check, ExternalLink, Download, File, Folder, ChevronRight, ChevronDown } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Anthropic, Notion } from '@lobehub/icons';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Navbar } from '@/components/navbar';
 
 interface Skill {
   id: string;
@@ -334,30 +335,7 @@ export default function SkillDetailPage() {
   if (loading) {
     return (
       <main className="min-h-screen bg-[#fafafa]">
-        <nav className="bg-white border-b border-[#eaeaea]">
-          <div className="container mx-auto px-6">
-            <div className="flex items-center justify-between h-16">
-              <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-                <img 
-                  src="/icon.png" 
-                  alt="Agent Skills Logo" 
-                  width="120" 
-                  height="120"
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 text-sm text-black bg-[#fafafa] hover:bg-[#f0f0f0] rounded-lg transition-colors border border-[#eaeaea]"
-              >
-                <Github className="w-4 h-4" />
-                <span>GitHub</span>
-              </a>
-            </div>
-          </div>
-        </nav>
+        <Navbar />
         <div className="container mx-auto px-6 py-6">
           <div className="max-w-5xl mx-auto">
             <Card 
@@ -406,30 +384,7 @@ export default function SkillDetailPage() {
   if (!skill) {
     return (
       <main className="min-h-screen bg-[#fafafa]">
-        <nav className="bg-white border-b border-[#eaeaea]">
-          <div className="container mx-auto px-6">
-            <div className="flex items-center justify-between h-16">
-              <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-                <img 
-                  src="/icon.png" 
-                  alt="Agent Skills Logo" 
-                  width="120" 
-                  height="120"
-                  className="object-contain"
-                />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 text-sm text-black bg-[#fafafa] hover:bg-[#f0f0f0] rounded-lg transition-colors border border-[#eaeaea]"
-              >
-                <Github className="w-4 h-4" />
-                <span>GitHub</span>
-              </a>
-            </div>
-          </div>
-        </nav>
+        <Navbar />
         <div className="container mx-auto px-6 py-20">
           <div className="text-center">
             <p className="text-[#666] text-lg">Skill not found</p>
@@ -445,33 +400,7 @@ export default function SkillDetailPage() {
   return (
     <main className="min-h-screen bg-[#fafafa]">
       {/* Navbar */}
-      <nav className="bg-white border-b border-[#eaeaea]">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo/Title */}
-            <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-              <img 
-                src="/icon.png" 
-                alt="Agent Skills Logo" 
-                width="120" 
-                height="120"
-                className="object-contain"
-              />
-            </a>
-
-            {/* GitHub Button */}
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm text-black bg-[#fafafa] hover:bg-[#f0f0f0] rounded-lg transition-colors border border-[#eaeaea]"
-            >
-              <Github className="w-4 h-4" />
-              <span>GitHub</span>
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Content */}
       <div className="container mx-auto px-6 py-6">

@@ -6,7 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 export function Navbar() {
   return (
     <nav className="bg-white border-b border-[#eaeaea]">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-3 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Title */}
           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
@@ -15,21 +15,24 @@ export function Navbar() {
               alt="Agent Skills Logo" 
               width="120" 
               height="120"
-              className="object-contain"
+              className="object-contain w-16 sm:w-24 md:w-[120px]"
             />
           </a>
 
           {/* Navigation Links */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* What is this Popover */}
             <Popover>
               <PopoverTrigger asChild>
-                <button className="flex items-center gap-2 px-3 py-2 text-sm text-[#666] hover:text-black hover:bg-[#fafafa] rounded-lg transition-colors">
+                <button 
+                  className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 text-sm text-[#666] hover:text-black hover:bg-[#fafafa] rounded-lg transition-colors"
+                  aria-label="What is this?"
+                >
                   <Info className="w-4 h-4" />
-                  <span>What is this?</span>
+                  <span className="hidden sm:inline">What is this?</span>
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="w-96 bg-white border-[#eaeaea] shadow-lg" align="end">
+              <PopoverContent className="w-[calc(100vw-2rem)] max-w-sm sm:max-w-md md:w-96 bg-white border-[#eaeaea] shadow-lg" align="end">
                 <div className="space-y-3">
                   <h4 className="font-semibold text-base text-black">About Agent Skills</h4>
                   <div className="text-sm text-[#666] space-y-2">
@@ -56,10 +59,11 @@ export function Navbar() {
             {/* API Docs Link */}
             <a
               href="/api-docs"
-              className="flex items-center gap-2 px-3 py-2 text-sm text-[#666] hover:text-black hover:bg-[#fafafa] rounded-lg transition-colors"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 text-sm text-[#666] hover:text-black hover:bg-[#fafafa] rounded-lg transition-colors"
+              aria-label="API Documentation"
             >
               <BookOpen className="w-4 h-4" />
-              <span>API Docs</span>
+              <span className="hidden sm:inline">API Docs</span>
             </a>
 
             {/* GitHub Button */}
@@ -67,10 +71,11 @@ export function Navbar() {
               href="https://github.com/onurkanbakirci/awesome-skills"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm text-black bg-[#fafafa] hover:bg-[#f0f0f0] rounded-lg transition-colors border border-[#eaeaea]"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 text-sm text-black bg-[#fafafa] hover:bg-[#f0f0f0] rounded-lg transition-colors border border-[#eaeaea]"
+              aria-label="View on GitHub"
             >
               <Github className="w-4 h-4" />
-              <span>GitHub</span>
+              <span className="hidden sm:inline">GitHub</span>
             </a>
           </div>
         </div>
