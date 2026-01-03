@@ -14,9 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://openskills.space'),
+  metadataBase: new URL('https://openskills.space'),
   title: "Agent Skills - Find Skills for Your Next Project",
   description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
+  keywords: ['AI agents', 'Claude', 'skills', 'AI capabilities', 'Anthropic', 'automation', 'agent skills'],
+  authors: [{ name: 'Onurkan Bakirci', url: 'https://github.com/onurkanbakirci' }],
+  creator: 'Onurkan Bakirci',
+  publisher: 'Agent Skills',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -31,26 +46,36 @@ export const metadata: Metadata = {
     shortcut: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
   },
   openGraph: {
-    title: "Agent Skills - Find Skills for Your Next Project",
-    description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
+    type: 'website',
+    locale: 'en_US',
     url: 'https://openskills.space',
     siteName: 'Agent Skills',
+    title: "Agent Skills - Find Skills for Your Next Project",
+    description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
     images: [
       {
         url: 'https://openskills.space/og_card.png',
+        secureUrl: 'https://openskills.space/og_card.png',
         width: 1200,
         height: 630,
         alt: 'Agent Skills - Find a skill for your AI agent',
+        type: 'image/png',
       },
     ],
-    locale: 'en_US',
-    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@openskills',
+    creator: '@onurkanbakirci',
     title: "Agent Skills - Find Skills for Your Next Project",
     description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
-    images: ['https://openskills.space/og_card.png'],
+    images: {
+      url: 'https://openskills.space/og_card.png',
+      alt: 'Agent Skills - Find a skill for your AI agent',
+    },
+  },
+  alternates: {
+    canonical: 'https://openskills.space',
   },
 };
 
