@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.4...v1.0.5) (2026-01-03)
+
+
+### Bug Fixes
+
+* Replace inline navbar implementation with Navbar component for improved code organization and maintainability ([44683d1](https://github.com/onurkanbakirci/awesome-skills/commit/44683d1cfc2043dad7c55bbf7edf3b91f73de5d0))
+
 ## [1.0.4](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.3...v1.0.4) (2026-01-03)
 
 
