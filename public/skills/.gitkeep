@@ -1,6 +1,6 @@
 # Skills Download Directory
 
-This directory contains downloaded LLM skills from GitHub. Each skill is stored in its own subdirectory.
+This directory contains downloaded agent skills from GitHub. Each skill is stored in its own subdirectory.
 
 To download skills, run:
 ```bash

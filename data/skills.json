@@ -92,7 +92,7 @@
   {
     "id": "68507ece-1eec-4a30-8cc0-ad60d1881390",
     "name": "skill-creator",
-    "description": "Create new LLM skills and agent capabilities with proper templates and structure",
+    "description": "Create new agent skills and agent capabilities with proper templates and structure",
     "category": "Development",
     "tags": ["skills", "creation", "meta", "official"],
     "sourceUrl": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
@@ -488,7 +488,7 @@
   {
     "id": "1c2d3e4f-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
     "name": "skill-creator",
-    "description": "Create new LLM skills and agent capabilities with proper templates, structure, and best practices",
+    "description": "Create new agent skills and agent capabilities with proper templates, structure, and best practices",
     "category": "Development",
     "tags": ["skills", "creation", "meta", "templates", "official"],
     "sourceUrl": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-creator",

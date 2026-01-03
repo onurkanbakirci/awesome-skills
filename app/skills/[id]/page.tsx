@@ -340,7 +340,7 @@ export default function SkillDetailPage() {
               <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <img 
                   src="/icon.png" 
-                  alt="LLM Skills Logo" 
+                  alt="Agent Skills Logo" 
                   width="120" 
                   height="120"
                   className="object-contain"
@@ -412,7 +412,7 @@ export default function SkillDetailPage() {
               <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <img 
                   src="/icon.png" 
-                  alt="LLM Skills Logo" 
+                  alt="Agent Skills Logo" 
                   width="120" 
                   height="120"
                   className="object-contain"
@@ -452,9 +452,9 @@ export default function SkillDetailPage() {
             <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
               <img 
                 src="/icon.png" 
-                alt="LLM Skills Logo" 
-                width="72" 
-                height="72"
+                alt="Agent Skills Logo" 
+                width="120" 
+                height="120"
                 className="object-contain"
               />
             </a>

@@ -253,7 +253,7 @@ export default function Home() {
             <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
               <img 
                 src="/icon.png" 
-                alt="LLM Skills Logo" 
+                alt="Agent Skills Logo" 
                 width="120" 
                 height="120"
                 className="object-contain"

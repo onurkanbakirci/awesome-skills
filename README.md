@@ -1,6 +1,6 @@
-# LLM Skills Project
+# Agent Skills Project
 
-An application for browsing and downloading LLM skills with a clean, ui.
+An application for browsing and downloading agent skills with a clean, ui.
 
 ## Features
 
