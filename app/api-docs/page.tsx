@@ -158,7 +158,7 @@ export default function ApiDocsPage() {
                           <p className="text-xs text-[#666] font-medium">{example.label}:</p>
                           <div className="bg-[#f5f5f5] rounded p-3 border border-[#d4d4d4] flex items-center justify-between gap-2">
                             <code className="text-xs font-mono text-black break-all flex-1">
-                              {typeof window !== 'undefined' ? window.location.origin : 'https://llmskills.com'}{example.url}
+                              {typeof window !== 'undefined' ? window.location.origin : 'https://openskills.space'}{example.url}
                             </code>
                             <a
                               href={example.url}

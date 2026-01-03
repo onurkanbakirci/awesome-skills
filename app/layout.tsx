@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://openskills.space'),
   title: "Agent Skills - Find Skills for Your Next Project",
   description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
   icons: {
@@ -32,11 +33,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Agent Skills - Find Skills for Your Next Project",
     description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
-    url: 'https://llmskills.com',
+    url: 'https://openskills.space',
     siteName: 'Agent Skills',
     images: [
       {
-        url: '/og_card.png',
+        url: 'https://openskills.space/og_card.png',
         width: 1200,
         height: 630,
         alt: 'Agent Skills - Find a skill for your AI agent',
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Agent Skills - Find Skills for Your Next Project",
     description: "Discover and download agent skills for Claude, featuring capabilities from Anthropic, Notion, Composio, and the community. Fast, powerful, and smart AI agent skills.",
-    images: ['/og_card.png'],
+    images: ['https://openskills.space/og_card.png'],
   },
 };
 
@@ -63,6 +64,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JTYZYNYLVR"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JTYZYNYLVR');
+          `}
+        </Script>
         {children}
       </body>
     </html>

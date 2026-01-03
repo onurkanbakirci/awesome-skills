@@ -517,10 +517,10 @@ export default function SkillDetailPage() {
                 <p className="text-xs text-[#666] mb-1.5">Download with curl:</p>
                 <div className="p-3 bg-[#f5f5f5] rounded-md border border-[#d4d4d4] flex items-center justify-between gap-2">
                   <code className="text-sm text-black font-mono flex-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                    curl {typeof window !== 'undefined' ? window.location.origin : ''}/api/download/{skill.id} -o {skill.owner}-{skill.name}.zip
+                    curl {typeof window !== 'undefined' ? window.location.origin : 'https://openskills.space'}/api/download/{skill.id} -o {skill.owner}-{skill.name}.zip
                   </code>
                   <button
-                    onClick={() => copyToClipboard(`curl ${typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000'}/api/download/${skill.id} -o ${skill.owner}-${skill.name}.zip`, skill.id)}
+                    onClick={() => copyToClipboard(`curl ${typeof window !== 'undefined' ? window.location.origin : 'https://openskills.space'}/api/download/${skill.id} -o ${skill.owner}-${skill.name}.zip`, skill.id)}
                     className="flex-shrink-0 p-1.5 hover:bg-[#e5e5e5] rounded transition-colors"
                     title="Copy to clipboard"
                   >

@@ -24,7 +24,7 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 
 # Set base URL for build (can be overridden at runtime)
-ENV NEXT_PUBLIC_BASE_URL=http://localhost:3000
+ENV NEXT_PUBLIC_BASE_URL=https://openskills.space
 
 # Build the application
 RUN npm run build
