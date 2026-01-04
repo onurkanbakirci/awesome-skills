@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.8...v1.1.0) (2026-01-04)
+
+
+### Features
+
+* Add GitHub icon rendering and new webapp-testing skill entry ([d3b4d9a](https://github.com/onurkanbakirci/awesome-skills/commit/d3b4d9ac0fc1b31306ad75bf9c013f6ad89e8c31))
+
 ## [1.0.8](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.7...v1.0.8) (2026-01-03)
 
 
