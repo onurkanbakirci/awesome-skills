@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.3.0...v1.4.0) (2026-01-04)
+
+
+### Features
+
+* recommendation endpoint added ([2bdaef7](https://github.com/onurkanbakirci/awesome-skills/commit/2bdaef739c1744b8ce51f5d53007764732a9ac15))
+
 ## [1.3.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.2.1...v1.3.0) (2026-01-04)
 
 
