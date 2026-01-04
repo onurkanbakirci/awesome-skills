@@ -24,6 +24,16 @@ In this repository, you will find a curated collection of AI agent skills organi
 
 ---
 
+## 🔗 Related Tools
+
+### Skills Gateway
+
+**[skills-gateway](https://github.com/onurkanbakirci/skills-gateway/)** - An intelligent skill selection system that reduces token consumption by 95%. Instead of loading all available skills into your AI context, the Skills Gateway API helps you find and load only the most relevant skill for your task, reducing token usage from ~125,000 to ~1,450 tokens.
+
+Perfect companion to this skills browser - use the gateway API to programmatically select the right skill for any task!
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:

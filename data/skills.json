@@ -754,5 +754,14 @@
     "tags": ["testing", "playwright", "automation", "browser", "official"],
     "sourceUrl": "https://github.com/github/awesome-copilot/tree/main/skills/webapp-testing",
     "owner": "github"
+  },
+  {
+    "id": "72e77fcc-c2f0-4327-b5ab-fd7655bb000f",
+    "name": "skills-gateway",
+    "description": "Intelligent skill recommendation system that finds and returns the most appropriate skill for your task, reducing token usage by ~95%",
+    "category": "AI Engineering",
+    "tags": ["skills", "recommendation", "api", "optimization"],
+    "sourceUrl": "https://github.com/onurkanbakirci/skills-gateway/tree/main/skills-gateway",
+    "owner": "onurkanbakirci"
   }
 ]
