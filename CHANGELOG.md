@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.1.0...v1.2.0) (2026-01-04)
+
+
+### Features
+
+* Implement search functionality for skill filters in Home component ([b801f06](https://github.com/onurkanbakirci/awesome-skills/commit/b801f064223395ff2a992b7fdb8e425e7d77ee00))
+
 ## [1.1.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.0.8...v1.1.0) (2026-01-04)
 
 
