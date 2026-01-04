@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.4.0...v1.5.0) (2026-01-04)
+
+
+### Features
+
+* Add Skills Gateway tool to README and skills.json for intelligent skill selection ([9d69718](https://github.com/onurkanbakirci/awesome-skills/commit/9d69718a30bb7cf8fb1d538416a22b071e580192))
+
 ## [1.4.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.3.0...v1.4.0) (2026-01-04)
 
 
