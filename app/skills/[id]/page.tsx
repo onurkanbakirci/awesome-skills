@@ -154,16 +154,16 @@ export default function SkillDetailPage() {
           <div key={node.path}>
             <button
               onClick={() => toggleFolder(node.path)}
-              className="w-full flex items-center gap-2 px-3 py-1.5 hover:bg-[#f5f5f5] text-left text-sm"
+              className="w-full flex items-center gap-2 px-3 py-1.5 hover:bg-[#f5f5f5] dark:hover:bg-[#2a2a2a] text-left text-sm"
               style={{ paddingLeft: `${level * 16 + 12}px` }}
             >
               {isExpanded ? (
-                <ChevronDown className="w-4 h-4 text-[#666] flex-shrink-0" />
+                <ChevronDown className="w-4 h-4 text-[#666] dark:text-[#aaa] flex-shrink-0" />
               ) : (
-                <ChevronRight className="w-4 h-4 text-[#666] flex-shrink-0" />
+                <ChevronRight className="w-4 h-4 text-[#666] dark:text-[#aaa] flex-shrink-0" />
               )}
-              <Folder className="w-4 h-4 text-[#666] flex-shrink-0" />
-              <span className="text-[#333] truncate">{node.name}</span>
+              <Folder className="w-4 h-4 text-[#666] dark:text-[#aaa] flex-shrink-0" />
+              <span className="text-[#333] dark:text-[#ccc] truncate">{node.name}</span>
             </button>
             {isExpanded && renderFileTree(node.children, level + 1)}
           </div>
@@ -174,13 +174,13 @@ export default function SkillDetailPage() {
           <button
             key={node.path}
             onClick={() => setSelectedFile(node.file)}
-            className={`w-full flex items-center gap-2 px-3 py-1.5 hover:bg-[#f5f5f5] text-left text-sm ${
-              isSelected ? 'bg-[#e5e5e5]' : ''
+            className={`w-full flex items-center gap-2 px-3 py-1.5 hover:bg-[#f5f5f5] dark:hover:bg-[#2a2a2a] text-left text-sm ${
+              isSelected ? 'bg-[#e5e5e5] dark:bg-[#333]' : ''
             }`}
             style={{ paddingLeft: `${level * 16 + 12}px` }}
           >
-            <File className="w-4 h-4 text-[#666] flex-shrink-0 ml-6" />
-            <span className={`truncate ${isSelected ? 'text-black font-medium' : 'text-[#666]'}`}>
+            <File className="w-4 h-4 text-[#666] dark:text-[#aaa] flex-shrink-0 ml-6" />
+            <span className={`truncate ${isSelected ? 'text-black dark:text-white font-medium' : 'text-[#666] dark:text-[#aaa]'}`}>
               {node.name}
             </span>
           </button>
@@ -344,12 +344,12 @@ export default function SkillDetailPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#fafafa]">
+      <main className="min-h-screen bg-[#fafafa] dark:bg-[#0f0f0f] transition-colors">
         <Navbar />
         <div className="container mx-auto px-6 py-6">
           <div className="max-w-5xl mx-auto">
             <Card 
-              className="mb-6 border-[#eaeaea]"
+              className="mb-6 border-[#eaeaea] dark:border-[#333] bg-white dark:bg-[#2a2a2a]"
               style={{
                 animation: 'fadeIn 0.4s ease-out'
               }}
@@ -368,7 +368,7 @@ export default function SkillDetailPage() {
               </CardContent>
             </Card>
             <Card 
-              className="border-[#eaeaea]"
+              className="border-[#eaeaea] dark:border-[#333] bg-white dark:bg-[#2a2a2a]"
               style={{
                 animation: 'fadeIn 0.4s ease-out 0.1s backwards'
               }}
@@ -393,12 +393,12 @@ export default function SkillDetailPage() {
 
   if (!skill) {
     return (
-      <main className="min-h-screen bg-[#fafafa]">
+      <main className="min-h-screen bg-[#fafafa] dark:bg-[#0f0f0f] transition-colors">
         <Navbar />
         <div className="container mx-auto px-6 py-20">
           <div className="text-center">
-            <p className="text-[#666] text-lg">Skill not found</p>
-            <a href="/" className="mt-4 text-black hover:underline inline-block">
+            <p className="text-[#666] dark:text-[#aaa] text-lg">Skill not found</p>
+            <a href="/" className="mt-4 text-black dark:text-white hover:underline inline-block">
               Go back home
             </a>
           </div>
@@ -408,7 +408,7 @@ export default function SkillDetailPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#fafafa]">
+    <main className="min-h-screen bg-[#fafafa] dark:bg-[#0f0f0f] transition-colors">
       {/* Navbar */}
       <Navbar />
 
@@ -417,7 +417,7 @@ export default function SkillDetailPage() {
         <div className="max-w-5xl mx-auto">
           {/* Skill Info Card */}
           <Card 
-            className="mb-6 border-[#eaeaea]"
+            className="mb-6 border-[#eaeaea] dark:border-[#333] bg-white dark:bg-[#2a2a2a] transition-colors"
             style={{
               animation: 'fadeIn 0.4s ease-out'
             }}
@@ -425,16 +425,22 @@ export default function SkillDetailPage() {
             <CardHeader className="pb-3">
               <div className="flex items-start gap-4">
                 <div className="flex-1">
-                  <CardTitle className="text-2xl mb-2">{skill.name}</CardTitle>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded bg-gray-50 text-gray-600 border border-gray-200 w-fit mb-2">
+                  <CardTitle className="text-2xl mb-2 text-black dark:text-white">{skill.name}</CardTitle>
+                  <a 
+                    href={skill.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded bg-gray-50 dark:bg-[#333] text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-[#444] w-fit mb-2 hover:bg-gray-100 dark:hover:bg-[#444] hover:border-gray-300 dark:hover:border-[#555] transition-colors cursor-pointer"
+                    title={`View ${skill.owner}'s repository`}
+                  >
                     {getOwnerIcon(skill.owner) && (
                       <span className="flex-shrink-0">
                         {getOwnerIcon(skill.owner)}
                       </span>
                     )}
                     {skill.owner}
-                  </span>
-                  <p className="text-[#666] text-base">{skill.description}</p>
+                  </a>
+                  <p className="text-[#666] dark:text-[#aaa] text-base">{skill.description}</p>
                 </div>
               </div>
             </CardHeader>
@@ -444,7 +450,7 @@ export default function SkillDetailPage() {
                 {skill.tags.filter(tag => tag !== 'official').map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-1 text-xs rounded-md bg-[#fafafa] text-[#666] border border-[#eaeaea]"
+                    className="px-2 py-1 text-xs rounded-md bg-[#fafafa] dark:bg-[#333] text-[#666] dark:text-[#aaa] border border-[#eaeaea] dark:border-[#444]"
                   >
                     {tag}
                   </span>
@@ -453,20 +459,20 @@ export default function SkillDetailPage() {
 
               {/* Download Command */}
               <div>
-                <p className="text-xs text-[#666] mb-1.5">Download with curl:</p>
-                <div className="p-3 bg-[#f5f5f5] rounded-md border border-[#d4d4d4] flex items-center justify-between gap-2">
-                  <code className="text-sm text-black font-mono flex-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
+                <p className="text-xs text-[#666] dark:text-[#aaa] mb-1.5">Download with curl:</p>
+                <div className="p-3 bg-[#f5f5f5] dark:bg-[#1a1a1a] rounded-md border border-[#d4d4d4] dark:border-[#444] flex items-center justify-between gap-2">
+                  <code className="text-sm text-black dark:text-white font-mono flex-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
                     curl {typeof window !== 'undefined' ? window.location.origin : 'https://openskills.space'}/api/download/{skill.id} -o {skill.owner}-{skill.name}.zip
                   </code>
                   <button
                     onClick={() => copyToClipboard(`curl ${typeof window !== 'undefined' ? window.location.origin : 'https://openskills.space'}/api/download/${skill.id} -o ${skill.owner}-${skill.name}.zip`, skill.id)}
-                    className="flex-shrink-0 p-1.5 hover:bg-[#e5e5e5] rounded transition-colors"
+                    className="flex-shrink-0 p-1.5 hover:bg-[#e5e5e5] dark:hover:bg-[#333] rounded transition-colors"
                     title="Copy to clipboard"
                   >
                     {copiedId === skill.id ? (
-                      <Check className="w-4 h-4 text-green-600" />
+                      <Check className="w-4 h-4 text-green-600 dark:text-green-400" />
                     ) : (
-                      <Copy className="w-4 h-4 text-[#666]" />
+                      <Copy className="w-4 h-4 text-[#666] dark:text-[#aaa]" />
                     )}
                   </button>
                 </div>
@@ -476,18 +482,18 @@ export default function SkillDetailPage() {
 
           {/* Source Code Section */}
           <Card 
-            className="border-[#eaeaea]"
+            className="border-[#eaeaea] dark:border-[#333] bg-white dark:bg-[#2a2a2a] transition-colors"
             style={{
               animation: 'fadeIn 0.4s ease-out 0.1s backwards'
             }}
           >
-            <CardHeader className="pb-3 border-b border-[#eaeaea]">
+            <CardHeader className="pb-3 border-b border-[#eaeaea] dark:border-[#333]">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-lg">Source Code</CardTitle>
+                <CardTitle className="text-lg text-black dark:text-white">Source Code</CardTitle>
                 <div className="flex gap-3">
                   <a
                     href={`/api/download/${skill.id}`}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-[#333] transition-colors text-sm font-medium"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-[#333] dark:hover:bg-[#e5e5e5] transition-colors text-sm font-medium"
                   >
                     <Download className="w-4 h-4" />
                     Download
@@ -496,7 +502,7 @@ export default function SkillDetailPage() {
                     href={skill.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black border border-[#eaeaea] rounded-lg hover:bg-[#fafafa] transition-colors text-sm font-medium"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a1a1a] text-black dark:text-white border border-[#eaeaea] dark:border-[#444] rounded-lg hover:bg-[#fafafa] dark:hover:bg-[#333] transition-colors text-sm font-medium"
                   >
                     <ExternalLink className="w-4 h-4" />
                     GitHub
@@ -510,44 +516,44 @@ export default function SkillDetailPage() {
                   <Skeleton className="h-96 w-full" />
                 </div>
               ) : files.length === 0 ? (
-                <div className="p-6 text-center text-[#666]">
+                <div className="p-6 text-center text-[#666] dark:text-[#aaa]">
                   No files found
                 </div>
               ) : (
                 <div className="flex" style={{ height: '600px' }}>
                   {/* File Explorer */}
-                  <div className="w-64 border-r border-[#eaeaea] overflow-y-auto">
+                  <div className="w-64 border-r border-[#eaeaea] dark:border-[#333] overflow-y-auto bg-white dark:bg-[#1a1a1a]">
                     <div className="py-2">
                       {renderFileTree(buildFileTree(files))}
                     </div>
                   </div>
                   
                   {/* Code Viewer */}
-                  <div className="flex-1 overflow-hidden flex flex-col">
+                  <div className="flex-1 overflow-hidden flex flex-col bg-white dark:bg-[#1a1a1a]">
                     {selectedFile ? (
                       <>
-                        <div className="px-4 py-3 border-b border-[#eaeaea] bg-[#fafafa]">
+                        <div className="px-4 py-3 border-b border-[#eaeaea] dark:border-[#333] bg-[#fafafa] dark:bg-[#1a1a1a]">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
-                              <File className="w-4 h-4 text-[#666]" />
-                              <span className="text-sm font-medium text-[#333]">
+                              <File className="w-4 h-4 text-[#666] dark:text-[#aaa]" />
+                              <span className="text-sm font-medium text-[#333] dark:text-[#ccc]">
                                 {selectedFile.name}
                               </span>
                             </div>
                             <button
                               onClick={() => copyToClipboard(selectedFile.content, `file-${selectedFile.path}`)}
-                              className="flex items-center gap-1.5 px-3 py-1.5 text-xs hover:bg-[#e5e5e5] rounded transition-colors"
+                              className="flex items-center gap-1.5 px-3 py-1.5 text-xs hover:bg-[#e5e5e5] dark:hover:bg-[#2a2a2a] rounded transition-colors"
                               title="Copy file content"
                             >
                               {copiedId === `file-${selectedFile.path}` ? (
                                 <>
-                                  <Check className="w-3.5 h-3.5 text-green-600" />
-                                  <span className="text-green-600">Copied</span>
+                                  <Check className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
+                                  <span className="text-green-600 dark:text-green-400">Copied</span>
                                 </>
                               ) : (
                                 <>
-                                  <Copy className="w-3.5 h-3.5 text-[#666]" />
-                                  <span className="text-[#666]">Copy</span>
+                                  <Copy className="w-3.5 h-3.5 text-[#666] dark:text-[#aaa]" />
+                                  <span className="text-[#666] dark:text-[#aaa]">Copy</span>
                                 </>
                               )}
                             </button>
@@ -555,7 +561,7 @@ export default function SkillDetailPage() {
                         </div>
                         <div className="flex-1 overflow-auto">
                           {selectedFile.content === '[Binary file]' ? (
-                            <div className="p-6 text-center text-[#666]">
+                            <div className="p-6 text-center text-[#666] dark:text-[#aaa]">
                               Binary file (cannot display content)
                             </div>
                           ) : (
@@ -576,7 +582,7 @@ export default function SkillDetailPage() {
                         </div>
                       </>
                     ) : (
-                      <div className="flex-1 flex items-center justify-center text-[#666]">
+                      <div className="flex-1 flex items-center justify-center text-[#666] dark:text-[#aaa]">
                         Select a file to view its contents
                       </div>
                     )}
@@ -612,15 +618,15 @@ export default function SkillDetailPage() {
       `}</style>
 
       {/* Footer */}
-      <footer className="border-t border-[#eaeaea] bg-white mt-16">
+      <footer className="border-t border-[#eaeaea] dark:border-[#333] bg-white dark:bg-[#1a1a1a] mt-16 transition-colors">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-center text-sm text-[#666]">
+          <div className="flex items-center justify-center text-sm text-[#666] dark:text-[#aaa]">
             <span>Built by</span>
             <a
               href="https://github.com/onurkanbakirci"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-1 text-black hover:text-[#D97757] transition-colors font-medium"
+              className="ml-1 text-black dark:text-white hover:text-[#D97757] transition-colors font-medium"
             >
               @onurkanbakirci
             </a>

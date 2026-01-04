@@ -152,7 +152,7 @@ export default function Home() {
     const parts = text.split(new RegExp(`(${query})`, 'gi'));
     return parts.map((part, index) => 
       part.toLowerCase() === query.toLowerCase() ? (
-        <mark key={index} className="bg-yellow-200 text-black px-1 rounded">
+        <mark key={index} className="bg-yellow-200 dark:bg-yellow-900/50 text-black dark:text-yellow-100 px-1 rounded">
           {part}
         </mark>
       ) : (
@@ -314,7 +314,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#fafafa]">
+    <main className="min-h-screen bg-[#fafafa] dark:bg-[#0f0f0f] transition-colors">
       {/* Navbar */}
       <Navbar />
 
@@ -324,8 +324,8 @@ export default function Home() {
           {/* Heading */}
           <div className="text-center mb-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-2">
-              <span className="block text-black mb-1">Find a <span className="italic" style={{ color: '#D97757' }}>skill</span> for</span>
-              <span className="block text-[#666]" style={{ minHeight: '1.2em' }}>
+              <span className="block text-black dark:text-white mb-1">Find a <span className="italic" style={{ color: '#D97757' }}>skill</span> for</span>
+              <span className="block text-[#666] dark:text-[#aaa]" style={{ minHeight: '1.2em' }}>
                 {rotatingPhrases[currentPhraseIndex].split('').map((char, index) => (
                   <span
                     key={`${currentPhraseIndex}-${index}`}
@@ -340,20 +340,20 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-sm text-[#666] mt-4 mb-6">
+            <p className="text-sm text-[#666] dark:text-[#aaa] mt-4 mb-6">
               Fast. Powerful. Smart.
             </p>
           </div>
 
           {/* Search Input */}
           <div className="relative max-w-2xl mx-auto mb-4">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#666]" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#666] dark:text-[#aaa]" />
             <Input
               type="text"
               placeholder="Search for skills..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-14 text-base bg-white border-[#e5e5e5] text-black placeholder:text-[#999] focus:border-black hover:border-[#999] transition-all duration-200 pl-12 rounded-lg shadow-sm"
+              className="h-14 text-base bg-white dark:bg-[#1a1a1a] border-[#e5e5e5] dark:border-[#333] text-black dark:text-white placeholder:text-[#999] dark:placeholder:text-[#666] focus:border-black dark:focus:border-white hover:border-[#999] dark:hover:border-[#666] transition-all duration-200 pl-12 rounded-lg shadow-sm"
             />
           </div>
 
@@ -363,11 +363,11 @@ export default function Home() {
               setSelectedOwner(value);
               setOwnerSearch('');
             }}>
-              <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
+              <SelectTrigger className="w-full bg-white dark:bg-[#1a1a1a] border-[#e5e5e5] dark:border-[#333] text-black dark:text-white hover:border-[#999] dark:hover:border-[#666] transition-all duration-200">
                 <SelectValue placeholder="Filter by owner" />
               </SelectTrigger>
               <SelectContent className="max-h-[300px]">
-                <div data-search-input className="px-2 py-2 bg-white border-b border-[#e5e5e5]">
+                <div data-search-input className="px-2 py-2 bg-white dark:bg-[#1a1a1a] border-b border-[#e5e5e5] dark:border-[#333]">
                   <Input
                     type="text"
                     placeholder="Search owners..."
@@ -394,11 +394,11 @@ export default function Home() {
               setSelectedCategory(value);
               setCategorySearch('');
             }}>
-              <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
+              <SelectTrigger className="w-full bg-white dark:bg-[#1a1a1a] border-[#e5e5e5] dark:border-[#333] text-black dark:text-white hover:border-[#999] dark:hover:border-[#666] transition-all duration-200">
                 <SelectValue placeholder="Filter by category" />
               </SelectTrigger>
               <SelectContent className="max-h-[300px]">
-                <div data-search-input className="px-2 py-2 bg-white border-b border-[#e5e5e5]">
+                <div data-search-input className="px-2 py-2 bg-white dark:bg-[#1a1a1a] border-b border-[#e5e5e5] dark:border-[#333]">
                   <Input
                     type="text"
                     placeholder="Search categories..."
@@ -422,11 +422,11 @@ export default function Home() {
               setSelectedTag(value);
               setTagSearch('');
             }}>
-              <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
+              <SelectTrigger className="w-full bg-white dark:bg-[#1a1a1a] border-[#e5e5e5] dark:border-[#333] text-black dark:text-white hover:border-[#999] dark:hover:border-[#666] transition-all duration-200">
                 <SelectValue placeholder="Filter by tag" />
               </SelectTrigger>
               <SelectContent className="max-h-[300px]">
-                <div data-search-input className="px-2 py-2 bg-white border-b border-[#e5e5e5]">
+                <div data-search-input className="px-2 py-2 bg-white dark:bg-[#1a1a1a] border-b border-[#e5e5e5] dark:border-[#333]">
                   <Input
                     type="text"
                     placeholder="Search tags..."
@@ -450,14 +450,14 @@ export default function Home() {
       </div>
 
       {/* Skills Grid Section */}
-      <div className="bg-white border-t border-[#eaeaea]">
+      <div className="bg-white dark:bg-[#1a1a1a] border-t border-[#eaeaea] dark:border-[#333] transition-colors">
         <div className="container mx-auto px-6 pt-8 pb-16">
           <div className="max-w-6xl mx-auto">
             {/* Loading State */}
             {loading && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[...Array(6)].map((_, index) => (
-                  <Card key={index} className="border-[#eaeaea] flex flex-col">
+                  <Card key={index} className="border-[#eaeaea] dark:border-[#333] flex flex-col bg-white dark:bg-[#2a2a2a]">
                     <CardHeader className="pb-2">
                       <Skeleton className="h-6 w-3/4" />
                     </CardHeader>
@@ -479,7 +479,7 @@ export default function Home() {
                   <Card
                     key={skill.id}
                     onClick={() => router.push(`/skills/${skill.id}`)}
-                    className="group relative hover:shadow-lg transition-all duration-200 border-[#eaeaea] hover:border-[#999] flex flex-col cursor-pointer"
+                    className="group relative hover:shadow-lg transition-all duration-200 border-[#eaeaea] dark:border-[#333] hover:border-[#999] dark:hover:border-[#666] flex flex-col cursor-pointer bg-white dark:bg-[#2a2a2a]"
                     style={{
                       animation: `fadeIn 0.4s ease-out ${index * 0.05}s backwards`
                     }}
@@ -491,28 +491,28 @@ export default function Home() {
                         onClick={(e) => {
                           e.stopPropagation();
                         }}
-                        className="p-1.5 bg-white border border-[#eaeaea] rounded-md hover:bg-[#fafafa]"
+                        className="p-1.5 bg-white dark:bg-[#333] border border-[#eaeaea] dark:border-[#444] rounded-md hover:bg-[#fafafa] dark:hover:bg-[#444]"
                         title="Download skill"
                       >
-                        <Download className="w-4 h-4 text-[#666]" />
+                        <Download className="w-4 h-4 text-[#666] dark:text-[#aaa]" />
                       </a>
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           window.open(skill.sourceUrl, '_blank');
                         }}
-                        className="p-1.5 bg-white border border-[#eaeaea] rounded-md hover:bg-[#fafafa]"
+                        className="p-1.5 bg-white dark:bg-[#333] border border-[#eaeaea] dark:border-[#444] rounded-md hover:bg-[#fafafa] dark:hover:bg-[#444]"
                         title="Open in GitHub"
                       >
-                        <ExternalLink className="w-4 h-4 text-[#666]" />
+                        <ExternalLink className="w-4 h-4 text-[#666] dark:text-[#aaa]" />
                       </button>
                     </div>
 
                     <CardHeader className="pb-0 mb-2">
-                      <CardTitle className="text-lg mb-1">
+                      <CardTitle className="text-lg mb-1 text-black dark:text-white">
                         {highlightText(skill.name, searchQuery)}
                       </CardTitle>
-                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded bg-gray-50 text-gray-600 border border-gray-200 w-fit">
+                      <span className="inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-medium rounded bg-gray-50 dark:bg-[#333] text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-[#444] w-fit">
                         {getOwnerIcon(skill.owner) && (
                           <span className="flex-shrink-0">
                             {getOwnerIcon(skill.owner)}
@@ -522,7 +522,7 @@ export default function Home() {
                       </span>
                     </CardHeader>
                     <CardContent className="flex-1 flex flex-col pt-0">
-                      <p className="text-sm text-[#666] mb-3 leading-relaxed flex-1">
+                      <p className="text-sm text-[#666] dark:text-[#aaa] mb-3 leading-relaxed flex-1">
                         {highlightText(skill.description, searchQuery)}
                       </p>
 
@@ -531,7 +531,7 @@ export default function Home() {
                         {skill.tags.filter(tag => tag !== 'official').map((tag) => (
                           <span
                             key={tag}
-                            className="px-2 py-0.5 text-xs rounded-md bg-[#fafafa] text-[#666] border border-[#eaeaea]"
+                            className="px-2 py-0.5 text-xs rounded-md bg-[#fafafa] dark:bg-[#333] text-[#666] dark:text-[#aaa] border border-[#eaeaea] dark:border-[#444]"
                           >
                             {tag}
                           </span>
@@ -540,9 +540,9 @@ export default function Home() {
 
                       {/* Download Command */}
                       <div onClick={(e) => e.stopPropagation()}>
-                        <p className="text-xs text-[#666] mb-1">Download:</p>
-                        <div className="p-2 bg-[#f5f5f5] rounded border border-[#d4d4d4] flex items-center justify-between gap-2">
-                          <code className="text-xs text-black font-mono flex-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
+                        <p className="text-xs text-[#666] dark:text-[#aaa] mb-1">Download:</p>
+                        <div className="p-2 bg-[#f5f5f5] dark:bg-[#1a1a1a] rounded border border-[#d4d4d4] dark:border-[#444] flex items-center justify-between gap-2">
+                          <code className="text-xs text-black dark:text-white font-mono flex-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
                             curl {typeof window !== 'undefined' ? window.location.origin : 'https://openskills.space'}/api/download/{skill.id} -o {skill.owner}-{skill.name}.zip
                           </code>
                           <button
@@ -550,13 +550,13 @@ export default function Home() {
                               e.stopPropagation();
                               copyToClipboard(`curl ${typeof window !== 'undefined' ? window.location.origin : 'https://openskills.space'}/api/download/${skill.id} -o ${skill.owner}-${skill.name}.zip`, skill.id);
                             }}
-                            className="flex-shrink-0 p-1 hover:bg-[#e5e5e5] rounded transition-colors"
+                            className="flex-shrink-0 p-1 hover:bg-[#e5e5e5] dark:hover:bg-[#333] rounded transition-colors"
                             title="Copy to clipboard"
                           >
                             {copiedId === skill.id ? (
-                              <Check className="w-3.5 h-3.5 text-green-600" />
+                              <Check className="w-3.5 h-3.5 text-green-600 dark:text-green-400" />
                             ) : (
-                              <Copy className="w-3.5 h-3.5 text-[#666]" />
+                              <Copy className="w-3.5 h-3.5 text-[#666] dark:text-[#aaa]" />
                             )}
                           </button>
                         </div>
@@ -570,10 +570,10 @@ export default function Home() {
             {/* No Results */}
             {!loading && skills.length === 0 && (
               <div className="text-center py-20">
-                <p className="text-[#666] text-lg mb-2">
+                <p className="text-[#666] dark:text-[#aaa] text-lg mb-2">
                   {searchQuery ? `No skills found for "${searchQuery}"` : 'No skills available'}
                 </p>
-                <p className="text-[#999] text-sm">
+                <p className="text-[#999] dark:text-[#666] text-sm">
                   {searchQuery ? 'Try a different search term' : 'Check your data file'}
                 </p>
               </div>
@@ -622,15 +622,15 @@ export default function Home() {
       `}</style>
 
       {/* Footer */}
-      <footer className="border-t border-[#eaeaea] bg-white mt-16">
+      <footer className="border-t border-[#eaeaea] dark:border-[#333] bg-white dark:bg-[#1a1a1a] mt-16 transition-colors">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-center text-sm text-[#666]">
+          <div className="flex items-center justify-center text-sm text-[#666] dark:text-[#aaa]">
             <span>Built by</span>
             <a
               href="https://github.com/onurkanbakirci"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-1 text-black hover:text-[#D97757] transition-colors font-medium"
+              className="ml-1 text-black dark:text-white hover:text-[#D97757] transition-colors font-medium"
             >
               @onurkanbakirci
             </a>
