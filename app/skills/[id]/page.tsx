@@ -327,6 +327,16 @@ export default function SkillDetailPage() {
             style={{ borderRadius: '50%' }}
           />
         );
+      case 'github':
+        return (
+          <img 
+            src={`https://github.com/github.png`}
+            alt="github" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
       default:
         return null;
     }

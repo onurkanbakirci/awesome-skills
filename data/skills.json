@@ -745,5 +745,14 @@
     "tags": ["tools", "design", "api", "architecture"],
     "sourceUrl": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/tool-design",
     "owner": "muratcankoylan"
+  },
+  {
+    "id": "47aab118-ddfd-4ebd-9033-80bafcddc47b",
+    "name": "webapp-testing",
+    "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs",
+    "category": "Development",
+    "tags": ["testing", "playwright", "automation", "browser", "official"],
+    "sourceUrl": "https://github.com/github/awesome-copilot/tree/main/skills/webapp-testing",
+    "owner": "github"
   }
 ]
