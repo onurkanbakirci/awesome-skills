@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.2.1...v1.3.0) (2026-01-04)
+
+
+### Features
+
+* Enhance dark mode support across the application with improved styling and theme toggle functionality ([230372d](https://github.com/onurkanbakirci/awesome-skills/commit/230372d1ed133aeb823239d1ce5c03ed6cbd6d55))
+
 ## [1.2.1](https://github.com/onurkanbakirci/awesome-skills/compare/v1.2.0...v1.2.1) (2026-01-04)
 
 
