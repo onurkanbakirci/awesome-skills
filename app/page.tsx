@@ -41,6 +41,9 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedTag, setSelectedTag] = useState<string>('all');
   const [allSkills, setAllSkills] = useState<Skill[]>([]);
+  const [ownerSearch, setOwnerSearch] = useState('');
+  const [categorySearch, setCategorySearch] = useState('');
+  const [tagSearch, setTagSearch] = useState('');
 
   // Load all skills initially for filter options
   useEffect(() => {
@@ -118,17 +121,29 @@ export default function Home() {
   // Get unique filter options
   const getUniqueOwners = () => {
     const owners = new Set(allSkills.map(skill => skill.owner));
-    return Array.from(owners).sort();
+    const sortedOwners = Array.from(owners).sort();
+    if (!ownerSearch) return sortedOwners;
+    return sortedOwners.filter(owner => 
+      owner.toLowerCase().includes(ownerSearch.toLowerCase())
+    );
   };
 
   const getUniqueCategories = () => {
     const categories = new Set(allSkills.map(skill => skill.category));
-    return Array.from(categories).sort();
+    const sortedCategories = Array.from(categories).sort();
+    if (!categorySearch) return sortedCategories;
+    return sortedCategories.filter(category => 
+      category.toLowerCase().includes(categorySearch.toLowerCase())
+    );
   };
 
   const getUniqueTags = () => {
     const tags = new Set(allSkills.flatMap(skill => skill.tags));
-    return Array.from(tags).filter(tag => tag !== 'official').sort();
+    const sortedTags = Array.from(tags).filter(tag => tag !== 'official').sort();
+    if (!tagSearch) return sortedTags;
+    return sortedTags.filter(tag => 
+      tag.toLowerCase().includes(tagSearch.toLowerCase())
+    );
   };
 
   const highlightText = (text: string, query: string) => {
@@ -344,11 +359,25 @@ export default function Home() {
 
           {/* Filters */}
           <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3">
-            <Select value={selectedOwner} onValueChange={setSelectedOwner}>
+            <Select value={selectedOwner} onValueChange={(value) => {
+              setSelectedOwner(value);
+              setOwnerSearch('');
+            }}>
               <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
                 <SelectValue placeholder="Filter by owner" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="max-h-[300px]">
+                <div data-search-input className="px-2 py-2 bg-white border-b border-[#e5e5e5]">
+                  <Input
+                    type="text"
+                    placeholder="Search owners..."
+                    value={ownerSearch}
+                    onChange={(e) => setOwnerSearch(e.target.value)}
+                    onClick={(e) => e.stopPropagation()}
+                    onKeyDown={(e) => e.stopPropagation()}
+                    className="h-8 text-sm"
+                  />
+                </div>
                 <SelectItem value="all">All Owners</SelectItem>
                 {getUniqueOwners().map((owner) => (
                   <SelectItem key={owner} value={owner}>
@@ -361,11 +390,25 @@ export default function Home() {
               </SelectContent>
             </Select>
 
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <Select value={selectedCategory} onValueChange={(value) => {
+              setSelectedCategory(value);
+              setCategorySearch('');
+            }}>
               <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
                 <SelectValue placeholder="Filter by category" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="max-h-[300px]">
+                <div data-search-input className="px-2 py-2 bg-white border-b border-[#e5e5e5]">
+                  <Input
+                    type="text"
+                    placeholder="Search categories..."
+                    value={categorySearch}
+                    onChange={(e) => setCategorySearch(e.target.value)}
+                    onClick={(e) => e.stopPropagation()}
+                    onKeyDown={(e) => e.stopPropagation()}
+                    className="h-8 text-sm"
+                  />
+                </div>
                 <SelectItem value="all">All Categories</SelectItem>
                 {getUniqueCategories().map((category) => (
                   <SelectItem key={category} value={category}>
@@ -375,11 +418,25 @@ export default function Home() {
               </SelectContent>
             </Select>
 
-            <Select value={selectedTag} onValueChange={setSelectedTag}>
+            <Select value={selectedTag} onValueChange={(value) => {
+              setSelectedTag(value);
+              setTagSearch('');
+            }}>
               <SelectTrigger className="w-full bg-white border-[#e5e5e5] text-black hover:border-[#999] transition-all duration-200">
                 <SelectValue placeholder="Filter by tag" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="max-h-[300px]">
+                <div data-search-input className="px-2 py-2 bg-white border-b border-[#e5e5e5]">
+                  <Input
+                    type="text"
+                    placeholder="Search tags..."
+                    value={tagSearch}
+                    onChange={(e) => setTagSearch(e.target.value)}
+                    onClick={(e) => e.stopPropagation()}
+                    onKeyDown={(e) => e.stopPropagation()}
+                    className="h-8 text-sm"
+                  />
+                </div>
                 <SelectItem value="all">All Tags</SelectItem>
                 {getUniqueTags().map((tag) => (
                   <SelectItem key={tag} value={tag}>
@@ -461,7 +518,7 @@ export default function Home() {
                             {getOwnerIcon(skill.owner)}
                           </span>
                         )}
-                        {skill.owner}
+                        <span>{highlightText(skill.owner, searchQuery)}</span>
                       </span>
                     </CardHeader>
                     <CardContent className="flex-1 flex flex-col pt-0">

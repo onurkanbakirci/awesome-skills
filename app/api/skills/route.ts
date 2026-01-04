@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
     // Apply search query if provided
     if (query) {
       skills = skills.filter((skill) => {
-        const searchableText = `${skill.name} ${skill.description}`.toLowerCase();
+        const searchableText = `${skill.name} ${skill.description} ${skill.owner}`.toLowerCase();
         return searchableText.includes(query);
       });
     }
