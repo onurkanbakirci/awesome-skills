@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/onurkanbakirci/awesome-skills/compare/v1.2.0...v1.2.1) (2026-01-04)
+
+
+### Bug Fixes
+
+* Update type assertion for child props in SelectContent to improve TypeScript compatibility ([337e2cb](https://github.com/onurkanbakirci/awesome-skills/commit/337e2cba6aa7a7faecee24942fb8595b6b2a9b5d))
+
 ## [1.2.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.1.0...v1.2.0) (2026-01-04)
 
 
