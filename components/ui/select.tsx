@@ -60,10 +60,10 @@ function SelectContent({
   // Separate search input from select items
   const childrenArray = React.Children.toArray(children);
   const searchInput = childrenArray.find(
-    (child) => React.isValidElement(child) && child.props?.['data-search-input']
+    (child) => React.isValidElement(child) && (child.props as any)?.['data-search-input']
   );
   const selectItems = childrenArray.filter(
-    (child) => !(React.isValidElement(child) && child.props?.['data-search-input'])
+    (child) => !(React.isValidElement(child) && (child.props as any)?.['data-search-input'])
   );
 
   return (
