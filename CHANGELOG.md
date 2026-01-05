@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.5.0...v1.6.0) (2026-01-05)
+
+
+### Features
+
+* Add onurkanbakirci profile image and Skills Gateway link to navbar ([6af0099](https://github.com/onurkanbakirci/awesome-skills/commit/6af0099f1fdb751c46a718bd8af70a33a5448c5f))
+
 ## [1.5.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.4.0...v1.5.0) (2026-01-04)
 
 
