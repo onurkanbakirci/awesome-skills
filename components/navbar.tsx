@@ -1,6 +1,6 @@
 'use client';
 
-import { Info, BookOpen, Github, Moon, Sun } from 'lucide-react';
+import { Info, BookOpen, Github, Moon, Sun, Zap } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useTheme } from '@/components/theme-provider';
 
@@ -67,6 +67,19 @@ export function Navbar() {
             >
               <BookOpen className="w-4 h-4" />
               <span className="hidden sm:inline">API Docs</span>
+            </a>
+
+            {/* Skills Gateway Link */}
+            <a
+              href="https://github.com/onurkanbakirci/skills-gateway"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-2 text-sm text-[#666] dark:text-[#aaa] hover:text-black dark:hover:text-white hover:bg-[#fafafa] dark:hover:bg-[#2a2a2a] rounded-lg transition-colors"
+              aria-label="Skills Gateway"
+              title="Intelligent skill selection - reduces token consumption by 95%"
+            >
+              <Zap className="w-4 h-4" />
+              <span className="hidden sm:inline">Gateway</span>
             </a>
 
             {/* GitHub Button */}

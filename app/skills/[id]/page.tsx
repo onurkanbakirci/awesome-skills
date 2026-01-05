@@ -337,6 +337,16 @@ export default function SkillDetailPage() {
             style={{ borderRadius: '50%' }}
           />
         );
+      case 'onurkanbakirci':
+        return (
+          <img 
+            src={`https://github.com/onurkanbakirci.png`}
+            alt="onurkanbakirci" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
       default:
         return null;
     }
