@@ -763,5 +763,14 @@
     "tags": ["skills", "recommendation", "api", "optimization"],
     "sourceUrl": "https://github.com/onurkanbakirci/skills-gateway/tree/main/skills-gateway",
     "owner": "onurkanbakirci"
+  },
+  {
+    "id": "ab1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+    "name": "planning-with-files",
+    "description": "Transforms workflow to use Manus-style persistent markdown files for planning, progress tracking, and knowledge storage",
+    "category": "Productivity",
+    "tags": ["planning", "organization", "workflow", "manus", "context-engineering"],
+    "sourceUrl": "https://github.com/OthmanAdi/planning-with-files/tree/master/planning-with-files",
+    "owner": "OthmanAdi"
   }
 ]

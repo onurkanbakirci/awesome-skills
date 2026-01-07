@@ -318,6 +318,16 @@ export default function Home() {
             style={{ borderRadius: '50%' }}
           />
         );
+      case 'othmanadi':
+        return (
+          <img 
+            src={`https://github.com/OthmanAdi.png`}
+            alt="OthmanAdi" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
       default:
         return null;
     }
