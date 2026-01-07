@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.6.0...v1.7.0) (2026-01-07)
+
+
+### Features
+
+* Add OthmanAdi profile image and new planning-with-files project to skills.json ([022246a](https://github.com/onurkanbakirci/awesome-skills/commit/022246a8b944d6cec03f125640298fc8c74f1bc6))
+
 ## [1.6.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.5.0...v1.6.0) (2026-01-05)
 
 
