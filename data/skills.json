@@ -772,5 +772,32 @@
     "tags": ["planning", "organization", "workflow", "manus", "context-engineering"],
     "sourceUrl": "https://github.com/OthmanAdi/planning-with-files/tree/master/planning-with-files",
     "owner": "OthmanAdi"
+  },
+  {
+    "id": "72714e33-102d-4c0a-8f9d-4790c1145f5f",
+    "name": "json-canvas",
+    "description": "Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and connections. Use when working with .canvas files, creating visual canvases, mind maps, flowcharts, or when the user mentions Canvas files in Obsidian.",
+    "category": "Productivity",
+    "tags": ["canvas", "visualization", "obsidian", "json", "mind-maps", "flowcharts"],
+    "sourceUrl": "https://github.com/kepano/obsidian-skills/tree/main/json-canvas",
+    "owner": "kepano"
+  },
+  {
+    "id": "526656d4-043f-40fa-ae7d-dfbdfcad64b8",
+    "name": "obsidian-bases",
+    "description": "Create and edit Obsidian Bases (.base files) with views, filters, formulas, and summaries. Use when working with .base files, creating database-like views of notes, or when the user mentions Bases, table views, card views, filters, or formulas in Obsidian.",
+    "category": "Productivity",
+    "tags": ["obsidian", "bases", "database", "views", "filters", "formulas"],
+    "sourceUrl": "https://github.com/kepano/obsidian-skills/tree/main/obsidian-bases",
+    "owner": "kepano"
+  },
+  {
+    "id": "29d936eb-f246-4177-a091-5f16e70b76cc",
+    "name": "obsidian-markdown",
+    "description": "Create and edit Obsidian Flavored Markdown with wikilinks, embeds, callouts, properties, and other Obsidian-specific syntax. Use when working with .md files in Obsidian, or when the user mentions wikilinks, callouts, frontmatter, tags, embeds, or Obsidian notes.",
+    "category": "Productivity",
+    "tags": ["markdown", "obsidian", "writing", "documentation", "wikilinks", "callouts"],
+    "sourceUrl": "https://github.com/kepano/obsidian-skills/tree/main/obsidian-markdown",
+    "owner": "kepano"
   }
 ]

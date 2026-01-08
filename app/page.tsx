@@ -328,6 +328,16 @@ export default function Home() {
             style={{ borderRadius: '50%' }}
           />
         );
+      case 'kepano':
+        return (
+          <img 
+            src={`https://github.com/kepano.png`}
+            alt="kepano" 
+            width="20" 
+            height="20" 
+            style={{ borderRadius: '50%' }}
+          />
+        );
       default:
         return null;
     }
