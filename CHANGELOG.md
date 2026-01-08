@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.7.0...v1.8.0) (2026-01-08)
+
+
+### Features
+
+* Add kepano profile image and new productivity tools to skills.json ([2ad8b1b](https://github.com/onurkanbakirci/awesome-skills/commit/2ad8b1b821a42e0a886c7a87acb345fa80394453))
+
 ## [1.7.0](https://github.com/onurkanbakirci/awesome-skills/compare/v1.6.0...v1.7.0) (2026-01-07)
 
 
